@@ -24,6 +24,7 @@
     "redux": "^4.0.5",
     "redux-promise-middleware": "^6.1.2",
     "session": "^0.1.0",
+    "sudo": "^1.0.3",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
