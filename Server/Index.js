@@ -31,5 +31,11 @@ massive({
 	console.log('DB connected')
 }) .catch (err => console.log(err));
 
+//ENDPOINTS 
+// app.post('/auth/register', authctrl.)
+// app.post('/auth/login', authctrl.)
+// app.post('/auth/logout', authctrl.)
+// app.get('/auth/user', authctrl.)
+
 
 app.listen(SERVER_PORT, () => console.log(`Listening on ${SERVER_PORT}`));
