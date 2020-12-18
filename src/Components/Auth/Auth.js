@@ -6,10 +6,10 @@ import axios from "axios"
 const Auth = (props) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    
+
 
     const loggingInUser = async (e) => {
-        e.preventDefault();
+        
         try {
             const user = await axios.post('/auth/login',{email, password})
             loginUser(user.data)
