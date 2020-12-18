@@ -1,1 +1,7 @@
-<h1>hello</h1>
+const Auth = (props) => {
+
+    return(
+        <div>Hello</div>
+    )
+}
+export default Auth
