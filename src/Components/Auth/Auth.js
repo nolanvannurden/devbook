@@ -1,3 +1,4 @@
+import "./Auth.css"
 const Auth = (props) => {
 
     return(
