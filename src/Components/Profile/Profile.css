@@ -1,0 +1,31 @@
+.profile-component {
+    width: 50vw;
+    margin: 0 auto;
+}
+
+.profile-component-left{
+    display: flex;
+}
+
+.profile-pic-input{
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
+
+.profile-buttons{
+    display: flex;
+    justify-content: space-around;
+    width: 50vw;
+    align-items: center;
+}
+
+button {
+    border-radius: 10%;
+    background-color: #FF5A36;
+}
