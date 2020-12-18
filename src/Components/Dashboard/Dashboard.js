@@ -1,1 +1,9 @@
-<h1>hello from dashboard</h1>
+
+const Dashboard = (props) => {
+
+    return(
+        <div>Dashboard</div>
+    )
+}
+export default Dashboard
+
