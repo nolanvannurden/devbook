@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 import {connect} from "react-redux"
 import {getUser, loginUser} from "../../redux/userReducer"
 
@@ -18,7 +18,7 @@ const Profile = () => {
     e.preventDefault();
     const { profile_pic, linkedin, portfolio, github, quote } = state;
 
-    const history = useHistory();
+    // const history = useHistory();
 
     try {
       const profile = await axios.post("profile/add", {
@@ -29,7 +29,7 @@ const Profile = () => {
         quote,
       });
       getUser();
-      history.push("/profile/user");
+    //   history.push("/profile/user");
     } catch (error) {
       console.log(error);
     }
