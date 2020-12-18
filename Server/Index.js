@@ -35,7 +35,7 @@ massive({
 //ENDPOINTS 
 app.post('/auth/register', authctrl.register)
 app.post('/auth/login', authctrl.login)
-// app.get('/auth/user', authctrl.)
+app.get('/auth/user', authctrl.getUser)
 
 
 app.post('/profile/add', checkUser, proctrl.addProfile )
