@@ -1,51 +1,53 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import {connect} from "react-redux"
+import {getUser, loginUser} from "../../redux/userReducer"
 
-export default function Profile() {
-//   const [state, setState] = useState({
-//     profile_pic: "",
-//     linkedin: "",
-//     portfolio: "",
-//     github: "",
-//     quote: "",
-//   });
+const Profile = () => {
 
-//   const addProfile = async (e) => {
-//     e.preventDefault();
-//     const { profile_pic, linkedin, portfolio, github, quote } = state;
+  const [state, setState] = useState({
+    profile_pic: "",
+    linkedin: "",
+    portfolio: "",
+    github: "",
+    quote: "",
+  });
 
-//     const history = useHistory();
+  const addProfile = async (e) => {
+    e.preventDefault();
+    const { profile_pic, linkedin, portfolio, github, quote } = state;
 
-//     try {
-//       const profile = await axios.post("profile/add", {
-//         profile_pic,
-//         linkedin,
-//         portfolio,
-//         github,
-//         quote,
-//       });
-//       getUser(user.data);
-//       history.push("/profile/user");
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   };
+    const history = useHistory();
 
-//   const changeHandler = (e) =>
-//     setState({ ...state, [e.target.name]: e.target.value });
+    try {
+      const profile = await axios.post("profile/add", {
+        profile_pic,
+        linkedin,
+        portfolio,
+        github,
+        quote,
+      });
+      getUser();
+      history.push("/profile/user");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const changeHandler = (e) =>
+    setState({ ...state, [e.target.name]: e.target.value });
 
   return (
     <div className="profile-component">
-      <form>
-        {/* onSubmit={(e) => addProfile(e)} */}
+      <form onSubmit={(e) => addProfile(e)}>
         <div className="profile-component-left">
           <div className="profile-pic-input">
             <input
-            //   className="profile-pic"
-            //   placeholder="Add photo"
-            //   onChange={(e) => changeHandler(e)}
-            //   name="profile_pic"
+              className="profile-pic"
+              placeholder="Add photo"
+              onChange={(e) => changeHandler(e)}
+              name="profile_pic"
             />
           </div>
         </div>
@@ -54,34 +56,34 @@ export default function Profile() {
 
           <div className="linkedin-input">
             <input
-            //   className="profile-linkedin"
-            //   placeholder="LinkedIn Link"
-            //   onChange={(e) => changeHandler(e)}
-            //   name="linkedin"
+              className="profile-linkedin"
+              placeholder="LinkedIn Link"
+              onChange={(e) => changeHandler(e)}
+              name="linkedin"
             />
           </div>
           <div className="portfolio-input">
             <input
-            //   className="profile-portfolio"
-            //   placeholder="Portfolio Link"
-            //   onChange={(e) => changeHandler(e)}
-            //   name="portfolio"
+              className="profile-portfolio"
+              placeholder="Portfolio Link"
+              onChange={(e) => changeHandler(e)}
+              name="portfolio"
             />
           </div>
           <div className="github-input">
             <input
-            //   className="profile-github"
-            //   placeholder="Github Link"
-            //   onChange={(e) => changeHandler(e)}
-            //   name="github"
+              className="profile-github"
+              placeholder="Github Link"
+              onChange={(e) => changeHandler(e)}
+              name="github"
             />
           </div>
           <div className="quote-input">
             <input
-            //   className="profile-quote"
-            //   placeholder="Add Quote"
-            //   onChange={(e) => changeHandler(e)}
-            //   name="quote"
+              className="profile-quote"
+              placeholder="Add Quote"
+              onChange={(e) => changeHandler(e)}
+              name="quote"
             />
           </div>
         </div>
@@ -102,3 +104,15 @@ export default function Profile() {
   );
 }
 
+const mapDispatchToProps = {
+    getUser,
+  };
+const mapStateToProps = (reduxState) => {
+    const {user, isLoggedIn} = reduxState
+    return {
+        user,
+        isLoggedIn
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Profile)
