@@ -1,7 +1,7 @@
 const Auth = (props) => {
 
     return(
-        <div>Hello</div>
+        <div>Auth</div>
     )
 }
 export default Auth
