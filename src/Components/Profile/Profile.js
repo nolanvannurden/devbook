@@ -1,26 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { getUser } from "../../redux/userReducer";
 import { connect } from "react-redux";
 import axios from 'axios'
 
 const Profile = (props) => {
-  const [state, setState] = useState({
-    profile_pic: "",
-    linkedin: "",
-    portfolio: "",
-    github: "",
-    quote: "",
-  });
 
+  const [input, setInput] = useState(props.profile)
   const [edit, setEdit] = useState(false);
 
+  useEffect(() => {
+    props.getUser()
+  })
+
   const saveEdit = async () => {
-
-    const { profile_pic, linkedin, portfolio, github, quote } = state;
-    
-
+    const { profile_pic, linkedin, portfolio, github, quote } = props;
+    console.log(props.profile)
     try {
-      const profile = await axios.post("profile/edit", {
+      const profile = await axios.put("/profile/user", {
         profile_pic,
         linkedin,
         portfolio,
@@ -28,14 +24,11 @@ const Profile = (props) => {
         quote,
       });
       getUser(profile.data);
-    props.history.push("/profile/user");
     } catch (error) {
       console.log(error);
     }
   };
 
-  const changeHandler = (e) =>
-    setState({ ...state, [e.target.name]: e.target.value });
 
   return (
     <div className="profile-component">
@@ -46,8 +39,9 @@ const Profile = (props) => {
               <input
                 className="profile-pic"
                 placeholder="Add photo"
-                onChange={(e) => changeHandler(e)}
-                name="profile_pic"
+                value={props.profile_pic}
+                onChange={(e) => setInput(e.target.value)}
+                name="profile-pic"
               />
             </div>
           </div>
@@ -58,7 +52,8 @@ const Profile = (props) => {
               <input
                 className="profile-linkedin"
                 placeholder="LinkedIn Link"
-                onChange={(e) => changeHandler(e)}
+                value={props.linkedin}
+                onChange={(e) => setInput(e.target.value)}
                 name="linkedin"
               />
             </div>
@@ -66,7 +61,8 @@ const Profile = (props) => {
               <input
                 className="profile-portfolio"
                 placeholder="Portfolio Link"
-                onChange={(e) => changeHandler(e)}
+                value={props.portfolio}
+                onChange={(e) => setInput(e.target.value)}
                 name="portfolio"
               />
             </div>
@@ -74,7 +70,8 @@ const Profile = (props) => {
               <input
                 className="profile-github"
                 placeholder="Github Link"
-                onChange={(e) => changeHandler(e)}
+                value={props.github}
+                onChange={(e) => setInput(e.target.value)}
                 name="github"
               />
             </div>
@@ -82,14 +79,19 @@ const Profile = (props) => {
               <input
                 className="profile-quote"
                 placeholder="Add Quote"
-                onChange={(e) => changeHandler(e)}
+                value={props.quote}
+                onChange={(e) => setInput(e.target.value)}
                 name="quote"
               />
             </div>
           </div>
         </div>
       ) : (
-        <div>Profile Page
+        <div>
+          <h1>Profile Page</h1>
+          {props.profile_pic}
+          {props.linkedin}
+          {props.portfolio}
         </div>
       )}
 
@@ -97,7 +99,10 @@ const Profile = (props) => {
         <div>
           <div className="profile-buttons">
             <div className="profile-edit-button-container">
-              <button className="profile-edit-button" onClick={() => saveEdit(props.profile_pic, props.linkedin, props.portfolio, props.github, props.quote)}>
+              <button className="profile-edit-button" 
+              onClick={() => {
+                saveEdit(props.profile_pic, props.linkedin, props.portfolio, props.github, props.quote) 
+                setEdit(!edit)}}>
                 Save
               </button>
             </div>

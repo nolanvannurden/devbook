@@ -40,7 +40,7 @@ app.get('/auth/user', authctrl.getUser)
 
 app.post('/profile/add', checkUser, proctrl.addProfile )
 app.get('/profile/user', checkUser, proctrl.getProfile)
-app.put("/profile/edit", checkUser, proctrl.editProfile)
+app.put("/profile/user", checkUser, proctrl.editProfile)
 
 
 app.listen(SERVER_PORT, () => console.log(`Listening on ${SERVER_PORT}`));

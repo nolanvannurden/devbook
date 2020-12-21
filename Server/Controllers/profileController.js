@@ -4,7 +4,7 @@ module.exports = {
 	getProfile: async (req, res) => {
 			const db = req.app.get('db')
 			const {user_id} = req.session.user
-
+			console.log("Get User Profile Success")
 			try {
 					const profile = await db.get_profile_id([+user_id])
 					res.status(200).send(profile)
@@ -30,7 +30,7 @@ module.exports = {
         const db = req.app.get('db')
         const {profile_pic, linkedin, portfolio, github, quote} = req.body
         const {user_id} = req.session.user
-				
+				console.log("Profile Edit Success")
         try {
 						const profile = await db.edit_profile([profile_pic, linkedin, portfolio, github, quote, +user_id])
             res.status(200).send(profile)
