@@ -43,6 +43,7 @@ const Auth = (props) => {
 
 const mapDispatchToProps = {
     getUser,
+    loginUser
   };
 const mapStateToProps = (reduxState) => {
     const {user, isLoggedIn} = reduxState
