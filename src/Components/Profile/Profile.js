@@ -90,9 +90,6 @@ const Profile = (props) => {
         </div>
       ) : (
         <div>Profile Page
-          {props.profile_pic}
-
-
         </div>
       )}
 
