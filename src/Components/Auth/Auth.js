@@ -12,9 +12,20 @@ const Auth = (props) => {
         
         try {
             const user = await axios.post('/auth/login',{email, password})
-            loginUser(user.data)
-            props.history.push("/dashboard")
+            props.loginUser(user.data)
+            // props.history.push("/dashboard")
             console.log(user.data)
+            console.log("Merry Christmas")
+        }
+        catch (err) {
+            console.log(err)
+        }
+    }
+    const getUserTest = async (e) => {
+        
+        try {
+            props.getUser()
+            console.log(props.user)
         }
         catch (err) {
             console.log(err)
@@ -37,12 +48,14 @@ const Auth = (props) => {
                 value={password}
                 onChange={event => setPassword(event.target.value)}/>
             <button onClick={() => loggingInUser()}>Login</button>
+            <button onClick={() => getUserTest()}>GetUser</button>
         </div>
     )
 }
 
 const mapDispatchToProps = {
     getUser,
+    loginUser
   };
 const mapStateToProps = (reduxState) => {
     const {user, isLoggedIn} = reduxState
