@@ -4,7 +4,11 @@ import {getUser} from '../../redux/userReducer';
 const Dashboard = (props) => {
 
     return(
-        <div>Dashboard</div>
+        <div><h1>Dashboard</h1>
+          <p>Welcome, {props.user.email}</p>
+
+          <p>{props.isLoggedIn ? "You are logged in": "You are not logged in"}</p>
+        </div>
     )
 }
 
