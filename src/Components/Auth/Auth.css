@@ -11,25 +11,33 @@
   background-size: cover; 
 
 } */
+
+.entireAuthPage {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15%;
+  
+}
 .aboutBox {
+  display: flex;
+  flex-direction: column;
   font-size: 2em;
   font-family: "Abril Fatface", cursive;
   height: 500px;
   width: 400px;
-  position: absolute;
-  top: 50%;
-  left: 40%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
+  /* position: absolute; */
+  /* margin-right: -50%; */
+  /* transform: translate(-50%, -50%); */
   background-color: #ff5a36;
   background-color: transparent;
+  background-color: #003249;
   /* color: #ebebeb; */
   color: #ff5a36;
   border-radius: 2%;
 }
 .aboutBox p {
-  /* color: #19323c; */
-  /* margin-top: 100px; */
   color: #ebebeb;
   font-family: "Alegreya", serif;
   font-size: 1.5rem;
@@ -37,13 +45,12 @@
 .loginBox {
   height: 300px;
   width: 350px;
+  display: flex;
+  flex-direction: column;
   background-color: #827081;
   font-family: "Abril Fatface", cursive;
-  position: absolute;
-  top: 50%;
-  left: 60%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
+  /* margin-right: -50%; */
+  /* transform: translate(-50%, -50%); */
   border-radius: 2%;
 }
 .loginBox h1 {
