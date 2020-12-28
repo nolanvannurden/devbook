@@ -12,7 +12,7 @@ const Auth = (props) => {
     try {
       const user = await axios.post("/auth/login", { email, password });
       props.loginUser(user.data);
-      // props.history.push("/dashboard")
+      props.history.push("/dashboard")
       console.log(user.data);
       console.log("Merry Christmas");
     } catch (err) {
