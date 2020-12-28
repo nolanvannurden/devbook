@@ -17,27 +17,45 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 15%;
-  
+  margin-top: 20%;
 }
+@media screen and (max-width: 700px) {
+    .entireAuthPage{
+      flex-direction: column;
+    
+    }
+  } 
 .aboutBox {
   display: flex;
   flex-direction: column;
-  font-size: 2em;
+  justify-content: space-between;
+  font-size: 1em;
   font-family: "Abril Fatface", cursive;
-  height: 500px;
-  width: 400px;
-  /* position: absolute; */
-  /* margin-right: -50%; */
-  /* transform: translate(-50%, -50%); */
-  background-color: #ff5a36;
-  background-color: transparent;
+  height: 300px;
+  width: 350px;
   background-color: #003249;
-  /* color: #ebebeb; */
+  opacity: 0.5;
   color: #ff5a36;
+  font-weight: bold;
   border-radius: 2%;
+  z-index: 1;
 }
-.aboutBox p {
+#aboutBoxItems {
+  height: 275px;
+  width: 325px;
+  color: #ff5a36;
+  background-color: #003249;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 2;
+}
+.aboutBoxItems h1 {
+    font-weight: bold;
+    font-family: "Alegreya", serif;
+    color: #ff5a36;
+}
+.aboutBoxItems p {
   color: #ebebeb;
   font-family: "Alegreya", serif;
   font-size: 1.5rem;
