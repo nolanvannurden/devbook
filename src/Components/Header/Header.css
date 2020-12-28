@@ -1,0 +1,36 @@
+.nav-header {
+  padding: 0 0px;
+	height: 15%;
+	color: white;
+  background-color: #19323c;
+  text-align: center;
+	font-size: 150%;
+  display: flex;
+  justify-content: space-between;
+	align-items: center;
+}
+
+.devbook-img {
+	height: 10%;
+	width: 10%;
+	size: 10px;
+}
+
+.dashboard-css{
+ color: aliceblue;
+}
+
+.profile-css {
+	color: white ;
+}
+
+.nav-header a {
+  color: inherit;
+}
+
+.nav-links{
+  display: flex;
+  width: 33%;
+  justify-content: space-around;
+  align-items: center;
+}
