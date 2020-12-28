@@ -1,0 +1,120 @@
+/* .entireAuthPage {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/src/jakob-owens-_SXxTHUkCwE-unsplash.jpg");
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+
+} */
+.aboutBox {
+  font-size: 2em;
+  font-family: "Abril Fatface", cursive;
+  height: 500px;
+  width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 40%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background-color: #ff5a36;
+  background-color: transparent;
+  /* color: #ebebeb; */
+  color: #ff5a36;
+  border-radius: 2%;
+}
+.aboutBox p {
+  /* color: #19323c; */
+  /* margin-top: 100px; */
+  color: #ebebeb;
+  font-family: "Alegreya", serif;
+  font-size: 1.5rem;
+}
+.loginBox {
+  height: 300px;
+  width: 350px;
+  background-color: #827081;
+  font-family: "Abril Fatface", cursive;
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  border-radius: 2%;
+}
+.loginBox h1 {
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin: 0;
+  color: #ebebeb;
+  color: #34a8eb;
+  color: #003249;
+  border-radius: 2%;
+}
+
+.loginItems {
+  display: flex;
+  flex-direction: column;
+
+  margin-right: 10px;
+}
+
+.userName {
+  color: #19323c;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.userName input {
+  height: 20px;
+  width: 200px;
+}
+.userName h3 {
+  margin-right: 20px;
+}
+.passWord {
+  color: #19323c;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.passWord input {
+  height: 20px;
+  width: 200px;
+}
+.passWord h3 {
+  margin-right: 25px;
+}
+.loginItems button {
+  color: #ebebeb;
+  background-color: #003249;
+  height: 25px;
+  width: 100px;
+  margin: auto;
+  margin-top: 30px;
+  justify-content: center;
+  font-family: "Alegreya", serif;
+  border-radius: 2%;
+}
+.footer {
+  margin: auto;
+  position: fixed;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  left: 50%;
+  top: 98%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-family: "Abril Fatface", cursive;
+  /* width: 50%; */
+}
