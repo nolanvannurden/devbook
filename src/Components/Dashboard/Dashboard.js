@@ -4,6 +4,7 @@ import {getUser} from '../../redux/userReducer';
 import Axios from 'axios';
 import {useState, useEffect} from 'react';
 import githubLogo from './img/GitHub_logo.png';
+import Header from '../Header/Header';
 const Dashboard = (props) => {
 
   const [users, setUsers] = useState([]);
@@ -67,6 +68,7 @@ const Dashboard = (props) => {
 
 
         <div>
+          <Header/>
           <h1>Header Component Will Go Here</h1>
           <p>Welcome, {props.user.email}</p>
         <div className="container container-container">{allUsers}</div>
