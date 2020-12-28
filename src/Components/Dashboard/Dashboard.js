@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {getUser} from '../../redux/userReducer';
 import Axios from 'axios';
 import {useState, useEffect} from 'react';
+import githubLogo from './img/GitHub_logo.png';
 const Dashboard = (props) => {
 
   const [users, setUsers] = useState([]);
@@ -36,9 +37,28 @@ const Dashboard = (props) => {
     console.log(`[profile] for user ${user.first_name}`, profile);
 
     if (profile) {
-      return (<li>Fancy profile for {user.first_name}</li>)
+      return (
+      <div className="container">
+      <div className='box'>
+        <img src={profile.profile_pic}/>
+        <h2>finished profile for {user.first_name}</h2>
+        <a href={profile.github} target='_blank'>
+          <img src={githubLogo} style={{height:'30px', width:'30px'}}/>
+        </a>
+        <li>LinkedIn : {profile.linkedin}</li>
+        <li>Portfolio : {profile.portfolio}</li>
+        <h4>{profile.quote}</h4>
+        </div>
+        </div>
+      )
     } else {
-      return (<li>lame profile for {user.first_name}</li>)
+      return (
+        <div className="container">
+          <div className="box">
+            <li>unfinished profile for {user.first_name}</li>
+       </div> 
+       </div>
+        )
     }
  
   })
@@ -46,9 +66,10 @@ const Dashboard = (props) => {
     return(
 
 
-        <div><h1>Dashboard</h1>
+        <div>
+          <h1>Header Component Will Go Here</h1>
           <p>Welcome, {props.user.email}</p>
-        {allUsers}
+        <div className="container container-container">{allUsers}</div>
           <p>{props.isLoggedIn ? "You are logged in": "You are not logged in"}</p>
         </div>
     )

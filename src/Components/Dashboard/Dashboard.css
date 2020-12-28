@@ -7,3 +7,51 @@ EBEBEB
 Ff5a36
 34a8eb
 003249 */
+
+*{
+  margin:0;
+  padding:0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+.container{
+  display:flex;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  color: white;
+
+}
+
+.container-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.box{
+  width:300px;
+  height:350px;
+  border: 1px solid #24576b;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
+  background-color: #2c6a84;
+  margin: 0 auto;
+  padding:10px 20px 30px;
+  border-radius: 15px;
+  flex: 1 0 20%; 
+  margin: 5px; 
+
+  justify-content: flex-start;
+}
+
+.box > img {
+  max-width: 100px;
+  max-height: 100px;
+  border-radius: 50%;
+}
+
+.box > h4 {
+  overflow-y: scroll;
+  height: 25%;
+  border-radius: 5px;
+  background-color: #3083a7;
+}
