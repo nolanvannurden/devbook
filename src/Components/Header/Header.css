@@ -1,9 +1,10 @@
 .nav-header {
   padding: 0 0px;
-	height: 15%;
+	height: 5%;
 	color: white;
   background-color: #19323c;
-  text-align: center;
+	text-align: center;
+	font-family: "Abril Fatface", cursive;
 	font-size: 150%;
   display: flex;
   justify-content: space-between;
@@ -11,9 +12,8 @@
 }
 
 .devbook-img {
-	height: 10%;
-	width: 10%;
-	size: 10px;
+	height: 5%;
+	width: 5%;
 }
 
 .dashboard-css{
