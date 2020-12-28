@@ -4,6 +4,8 @@ import {getUser} from '../../redux/userReducer';
 import Axios from 'axios';
 import {useState, useEffect} from 'react';
 import githubLogo from './img/GitHub_logo.png';
+import linkedinLogo from './img/linkedin.png';
+import websiteLogo from './img/website.png';
 import Header from '../Header/Header';
 const Dashboard = (props) => {
 
@@ -46,8 +48,13 @@ const Dashboard = (props) => {
         <a href={profile.github} target='_blank'>
           <img src={githubLogo} style={{height:'30px', width:'30px'}}/>
         </a>
-        <li>LinkedIn : {profile.linkedin}</li>
-        <li>Portfolio : {profile.portfolio}</li>
+        <a href={profile.linkedin} target='_blank'>
+          <img src={linkedinLogo} style={{height:'30px', width:'30px'}}/>
+        </a>
+        <a href={profile.portfolio} target='_blank'>
+          <img src={websiteLogo} style={{height:'30px', width:'30px'}}/>
+        </a>
+        
         <h4>{profile.quote}</h4>
         </div>
         </div>
@@ -69,10 +76,8 @@ const Dashboard = (props) => {
 
         <div>
           <Header/>
-          <h1>Header Component Will Go Here</h1>
           <p>Welcome, {props.user.email}</p>
         <div className="container container-container">{allUsers}</div>
-          <p>{props.isLoggedIn ? "You are logged in": "You are not logged in"}</p>
         </div>
     )
 }
