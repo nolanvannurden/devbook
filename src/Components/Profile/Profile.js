@@ -5,30 +5,40 @@ import axios from 'axios'
 
 const Profile = (props) => {
 
-  const [input, setInput] = useState(props.profile)
+  const [input, setInput] = useState('')
   const [edit, setEdit] = useState(false);
+  const [profile, setProfile] = useState([])
+  // const [getProfile, getProfile] = useState([])
 
   useEffect(() => {
-    props.getUser()
-  })
+    const getProfile = async () => {
+      try {
+        const res = await axios.get("/profile/user")
+        setProfile(res.data)
+      }
+      catch(err){
+        console.log(err)
+      }
+    }
+    getProfile()
+  }, [])
 
-  const saveEdit = async () => {
-    const { profile_pic, linkedin, portfolio, github, quote } = props;
-    console.log(props.profile)
+  const editProfile = async (profile_pic, linkedin, portfolio, github, quote) => {
     try {
-      const profile = await axios.put("/profile/user", {
+      const res = await axios.put("/profile/user", {
         profile_pic,
         linkedin,
         portfolio,
         github,
         quote,
       });
-      getUser(profile.data);
+      setProfile(res.data);
     } catch (error) {
       console.log(error);
     }
   };
 
+//NOTE: map over the array
 
   return (
     <div className="profile-component">
@@ -39,9 +49,10 @@ const Profile = (props) => {
               <input
                 className="profile-pic"
                 placeholder="Add photo"
-                value={props.profile_pic}
+                value={profile.profile_pic}
                 onChange={(e) => setInput(e.target.value)}
                 name="profile-pic"
+              
               />
             </div>
           </div>
@@ -52,7 +63,7 @@ const Profile = (props) => {
               <input
                 className="profile-linkedin"
                 placeholder="LinkedIn Link"
-                value={props.linkedin}
+                value={profile.linkedin}
                 onChange={(e) => setInput(e.target.value)}
                 name="linkedin"
               />
@@ -61,7 +72,7 @@ const Profile = (props) => {
               <input
                 className="profile-portfolio"
                 placeholder="Portfolio Link"
-                value={props.portfolio}
+                value={profile.portfolio}
                 onChange={(e) => setInput(e.target.value)}
                 name="portfolio"
               />
@@ -70,7 +81,7 @@ const Profile = (props) => {
               <input
                 className="profile-github"
                 placeholder="Github Link"
-                value={props.github}
+                value={profile.github}
                 onChange={(e) => setInput(e.target.value)}
                 name="github"
               />
@@ -79,7 +90,7 @@ const Profile = (props) => {
               <input
                 className="profile-quote"
                 placeholder="Add Quote"
-                value={props.quote}
+                value={profile.quote}
                 onChange={(e) => setInput(e.target.value)}
                 name="quote"
               />
@@ -89,9 +100,9 @@ const Profile = (props) => {
       ) : (
         <div>
           <h1>Profile Page</h1>
-          {props.profile_pic}
-          {props.linkedin}
-          {props.portfolio}
+          {profile.profile_pic}
+          {profile.linkedin}
+          {profile.portfolio}
         </div>
       )}
 
@@ -101,7 +112,7 @@ const Profile = (props) => {
             <div className="profile-edit-button-container">
               <button className="profile-edit-button" 
               onClick={() => {
-                saveEdit(props.profile_pic, props.linkedin, props.portfolio, props.github, props.quote) 
+                editProfile(profile.profile_pic, profile.linkedin, profile.portfolio, profile.github, profile.quote, input) 
                 setEdit(!edit)}}>
                 Save
               </button>
