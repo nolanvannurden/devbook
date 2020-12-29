@@ -4,16 +4,17 @@ import { connect } from "react-redux";
 import { getUser, loginUser, logoutUser } from "../../redux/userReducer";
 import LilJon from "../../Video/liljon.mp4";
 import axios from "axios";
+
 const Auth = (props) => {
-  const [firstName, setfirstName] = useState("");
-  const [lastName, setlastName] = useState("");
+  const [first_name, setfirstName] = useState("");
+  const [last_name, setlastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [cohort, setCohort] = useState("");
   const [newUser, setNewUser] = useState(false);
 
 
-  const loggingInUser = async (e) => {
+  const loggingInUser = async () => {
     try {
       const user = await axios.post("/auth/login", { email, password });
       props.loginUser(user.data);
@@ -25,7 +26,23 @@ const Auth = (props) => {
     }
   };
 
+  const registerNewUser = async () => {
+    try {
+      const newUser = await axios.post("/auth/register",{first_name, last_name, email, password, cohort})
+      props.loginUser(newUser.data);
+      props.history.push("/dashboard");
+      console.log(newUser.data);
+      console.log("Merry Christmas");
+    } catch (err){
+      console.log(err)
+    }
+  }
+
   
+
+
+
+
 
   let leftFrag = "<";
   let rightFrag = "/>";
@@ -39,7 +56,7 @@ const Auth = (props) => {
           <div className="registerItems">
             <div className="boxContainer">
               <div className="titleContainer">
-                <h3 id="first">First Name</h3>
+                <h3>First Name</h3>
                 <h3>Last Name</h3>
                 <h3>Email</h3>
                 <h3>Password</h3>
@@ -49,13 +66,13 @@ const Auth = (props) => {
               <input
                 name="firstName"
                 placeholder="First Name"
-                value={firstName}
+                value={first_name}
                 onChange={(event) => setfirstName(event.target.value)}
               />
               <input
                 name="lastName"
                 placeholder="Last Name"
-                value={lastName}
+                value={last_name}
                 onChange={(event) => setlastName(event.target.value)}
               />
               <input
@@ -79,7 +96,7 @@ const Auth = (props) => {
               
               </div>
             </div>
-            <button className="registerbtn" onClick={() => loggingInUser()}>
+            <button className="registerbtn" onClick={() => registerNewUser()}>
               Create Account
             </button>
             <button className="newAcctBtn" onClick={() => setNewUser(!newUser)}>
