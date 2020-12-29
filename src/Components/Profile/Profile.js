@@ -42,6 +42,9 @@ const Profile = (props) => {
 
   return (
     <div className="profile-component">
+
+    
+
       {edit ? (
         <div>
           <div className="profile-component-left">
