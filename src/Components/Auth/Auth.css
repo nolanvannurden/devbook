@@ -20,11 +20,10 @@
   margin-top: 20%;
 }
 @media screen and (max-width: 700px) {
-    .entireAuthPage{
-      flex-direction: column;
-    
-    }
-  } 
+  .entireAuthPage {
+    flex-direction: column;
+  }
+}
 .aboutBox {
   display: flex;
   flex-direction: column;
@@ -33,32 +32,20 @@
   font-family: "Abril Fatface", cursive;
   height: 300px;
   width: 350px;
-  background-color: #003249;
-  opacity: 0.5;
-  color: #ff5a36;
+  position: relative;
+  background: rgb(204, 204, 204, 0.5);
+  background: rgb(0, 50, 73, 0.5);
   font-weight: bold;
   border-radius: 2%;
-  z-index: 1;
 }
-#aboutBoxItems {
+.aboutBoxItems {
   height: 275px;
   width: 325px;
-  color: #ff5a36;
-  background-color: #003249;
+  position: relative;
+  color: #ebebeb;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  z-index: 2;
-}
-.aboutBoxItems h1 {
-    font-weight: bold;
-    font-family: "Alegreya", serif;
-    color: #ff5a36;
-}
-.aboutBoxItems p {
-  color: #ebebeb;
-  font-family: "Alegreya", serif;
-  font-size: 1.5rem;
 }
 .loginBox {
   height: 300px;
