@@ -38,5 +38,19 @@ module.exports = {
             console.log(`You cannot edit this profile`, err)
             res.sendStatus(500)
         }
-    },
+		},
+
+	getAllProfiles: async (req, res) => {
+		const db = req.app.get('db')
+
+		try {
+			const profiles = await db.get_all_profiles();
+			res.status(200).send(profiles);
+		} catch(err) {
+			console.log(`Could not get all profiles`, err);
+			res.sendStatus(500);
+		}
+		
+	},
+
 }

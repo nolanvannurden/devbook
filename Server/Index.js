@@ -5,6 +5,7 @@ const massive = require('massive');
 const session = require('express-session');
 const authctrl = require('./Controllers/authController')
 const proctrl = require('./Controllers/profileController')
+const userctrl = require('./Controllers/userController')
 const {SESSION_SECRET, SERVER_PORT, CONNECTION_STRING} = process.env
 const {checkUser} = require('./Controllers/middleware')
 
@@ -36,6 +37,10 @@ massive({
 app.post('/auth/register', authctrl.register)
 app.post('/auth/login', authctrl.login)
 app.get('/auth/user', authctrl.getUser)
+
+//dashboard endpoints 
+app.get('/api/users', userctrl.getAllUsers)
+app.get('/api/profiles', proctrl.getAllProfiles)
 
 
 app.post('/profile/add', checkUser, proctrl.addProfile )

@@ -1,0 +1,145 @@
+/* .entireAuthPage {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/src/jakob-owens-_SXxTHUkCwE-unsplash.jpg");
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
+
+} */
+
+.entireAuthPage {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20%;
+}
+@media screen and (max-width: 700px) {
+    .entireAuthPage{
+      flex-direction: column;
+    
+    }
+  } 
+.aboutBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 1em;
+  font-family: "Abril Fatface", cursive;
+  height: 300px;
+  width: 350px;
+  background-color: #003249;
+  opacity: 0.5;
+  color: #ff5a36;
+  font-weight: bold;
+  border-radius: 2%;
+  z-index: 1;
+}
+#aboutBoxItems {
+  height: 275px;
+  width: 325px;
+  color: #ff5a36;
+  background-color: #003249;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 2;
+}
+.aboutBoxItems h1 {
+    font-weight: bold;
+    font-family: "Alegreya", serif;
+    color: #ff5a36;
+}
+.aboutBoxItems p {
+  color: #ebebeb;
+  font-family: "Alegreya", serif;
+  font-size: 1.5rem;
+}
+.loginBox {
+  height: 300px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  background-color: #827081;
+  font-family: "Abril Fatface", cursive;
+  /* margin-right: -50%; */
+  /* transform: translate(-50%, -50%); */
+  border-radius: 2%;
+}
+.loginBox h1 {
+  width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin: 0;
+  color: #ebebeb;
+  color: #34a8eb;
+  color: #003249;
+  border-radius: 2%;
+}
+
+.loginItems {
+  display: flex;
+  flex-direction: column;
+
+  margin-right: 10px;
+}
+
+.userName {
+  color: #19323c;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.userName input {
+  height: 20px;
+  width: 200px;
+}
+.userName h3 {
+  margin-right: 20px;
+}
+.passWord {
+  color: #19323c;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.passWord input {
+  height: 20px;
+  width: 200px;
+}
+.passWord h3 {
+  margin-right: 25px;
+}
+.loginItems button {
+  color: #ebebeb;
+  background-color: #003249;
+  height: 25px;
+  width: 100px;
+  margin: auto;
+  margin-top: 30px;
+  justify-content: center;
+  font-family: "Alegreya", serif;
+  border-radius: 2%;
+}
+.footer {
+  margin: auto;
+  position: fixed;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  left: 50%;
+  top: 98%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-family: "Abril Fatface", cursive;
+  /* width: 50%; */
+}
