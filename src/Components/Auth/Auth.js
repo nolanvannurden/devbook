@@ -26,13 +26,16 @@ const Auth = (props) => {
   return (
     <div className="entireAuthPage">
       <div className="aboutBox">
-        <div id="aboutBoxItems">
+        <div className="aboutBoxItems">
           <h1>
             Welcome to {leftFrag}Devbook{rightFrag}
           </h1>
           <p>
-            {leftFrag}Devbook{rightFrag} was created as social media platform
+            {leftFrag}Devbook{rightFrag} was created as social media yearbook platform
             for Devmountain alumni
+          </p>
+          <p>
+          -WR6
           </p>
         </div>
       </div>
