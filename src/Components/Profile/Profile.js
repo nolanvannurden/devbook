@@ -77,7 +77,7 @@ const Profile = (props) => {
         <div>{console.log(profile)}</div>
         {edit ? (
           <div className="profile-form">
-            <div className="profile-component-left">
+            <div className="profile-form-photo">
               <div 
               className="profile-pic-input"
               style={{
@@ -107,7 +107,7 @@ const Profile = (props) => {
                 />
                 <img
                 className='profile-img'
-                alt="Add Profile Photo Here"
+           
                   ref={uploadedImage}
                   style={{
                     width: "100%",
@@ -119,7 +119,7 @@ const Profile = (props) => {
           
               </div>
 
-            <div className="profile-component-right">
+            <div className="profile-form-info">
               <div className="name"></div>
 
               <div className="linkedin-input">
@@ -195,7 +195,7 @@ const Profile = (props) => {
               <div className="profile-buttons">
                 <div className="profile-edit-button-container">
                   <button
-                    className="profile-edit-button"
+                    className='save-button'
                     onClick={() => {
                       editProfile(
                         profile_pic,
@@ -215,6 +215,7 @@ const Profile = (props) => {
           ) : (
             <div>
               <button
+              className='edit-button'
                 onClick={() => {
                   setEdit(!edit);
                 }}
