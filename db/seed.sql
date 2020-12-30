@@ -10,9 +10,9 @@ CREATE TABLE dev_users (
 CREATE TABLE profile (
     profile_id SERIAL PRIMARY KEY,
     user_id INT REFERENCES dev_users(user_id),
-    profile_pic TEXT,
-    linkedin TEXT,
-    portfolio TEXT,
-    github TEXT,
-    quote TEXT
+    profile_pic VARCHAR(500),
+    linkedin VARCHAR(500),
+    portfolio VARCHAR(500),
+    github VARCHAR(500),
+    quote VARCHAR(500)
 );
