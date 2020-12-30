@@ -53,17 +53,17 @@ const Dashboard = (props) => {
       return (
       <div className="container">
       <div className='box'>
-        <img src={profile.profile_pic}/>
+        <img className= 'profile_img'src={profile.profile_pic} alt="profile"/>
         <h2>{user.first_name} {user.last_name}</h2>
         <section className="logos">
-        <a href={profile.github} target='_blank'>
-          <img src={githubLogo} style={{height:'30px', width:'30px'}}/>
+        <a href={profile.github} target='_blank' rel="noreferrer">
+          <img src={githubLogo} style={{height:'30px', width:'30px'}} alt="github"/>
         </a>
-        <a href={profile.linkedin} target='_blank'>
-          <img src={linkedinLogo} style={{height:'30px', width:'30px'}}/>
+        <a href={profile.linkedin} target='_blank' rel="noreferrer">
+          <img src={linkedinLogo} style={{height:'30px', width:'30px'}} alt="linkedin"/>
         </a>
-        <a href={profile.portfolio} target='_blank'>
-          <img src={websiteLogo} style={{height:'30px', width:'30px'}}/>
+        <a href={profile.portfolio} target='_blank' rel="noreferrer">
+          <img src={websiteLogo} style={{height:'30px', width:'30px'}} alt="portfolio"/>
         </a>
         </section>
         <h4>{profile.quote}</h4>
@@ -84,6 +84,12 @@ const Dashboard = (props) => {
  
   })
 
+    console.log("wtf props", props);
+
+    const capitalizedName = props.user.first_name.replace( 
+      /(\w)(\w*)/g, function( g0,g1,g2 ) {
+        return g1.toUpperCase() + g2.toLowerCase();
+      });
 
     return(
 
@@ -91,7 +97,8 @@ const Dashboard = (props) => {
         <div>
           <Header/>
 
-          <p>Welcome, {props.user.email}</p>
+          <h1>Welcome, {capitalizedName}</h1>
+            <h3>Let's get you connected</h3>
           <p>Search by name: 
             <input type="text"
               onChange={(e) => {setNameFilter(e.target.value)}}
