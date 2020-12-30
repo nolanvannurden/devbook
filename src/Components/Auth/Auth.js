@@ -26,18 +26,36 @@ const Auth = (props) => {
     }
   };
 
-  const registerNewUser = async () => {
-    try {
-      const newUser = await axios.post("/auth/register",{first_name, last_name, email, password, cohort})
-      props.loginUser(newUser.data);
-      props.history.push("/dashboard");
-      console.log(newUser.data);
-      console.log("Merry Christmas");
-    } catch (err){
-      console.log(err)
-    }
-  }
+  const registerNewUserAndProfile = () => {
+    registerNewUser();
+    // registerNewProfile();
+}
 
+  // const registerNewUser = async () => {
+  //   try {
+  //     const newUser = await axios.post("/auth/register",{first_name, last_name, email, password, cohort})
+  //     props.loginUser(newUser.data);
+  //     props.history.push("/dashboard");
+  //     console.log(newUser.data);
+  //     console.log("Merry Christmas");
+  //   } catch (err){
+  //     console.log(err)
+  //   }
+  // }
+
+  const registerNewUser = () => {
+
+    axios
+      .post("/auth/register",{first_name, last_name, email, password, cohort})
+      .then(newUser =>{
+        props.loginUser(newUser.data);
+        props.history.push("/dashboard");
+        console.log(newUser.data);
+        console.log("Merry Christmas");
+        registerNewProfile();
+    })
+      .catch(err => console.log(err))
+  }
 
   let profile_pic = "profilepic"
   let linkedin = "yourlinkedin"
@@ -48,21 +66,26 @@ const Auth = (props) => {
   
 
   const registerNewProfile = async () => {
-    try {
-      const newProfile = await axios.post("/profile/add",{profile_pic, linkedin,
-      portfolio, github, quote, user_id })
-      console.log(newProfile.data)
-    }
-    catch (err) {
-      console.log(props.user.userId)
-      console.log(err)
-    }
+    axios.post("/profile/add",{profile_pic, linkedin, portfolio, github, quote, user_id })
+    .then(newProfile => {
+      console.log(newProfile)
+      props.history.push("/profile");
+    })
+    .catch(err => console.log(err))
   }
-  
-  const registerNewUserAndProfile = () => {
-      registerNewUser();
-      // registerNewProfile();
-  }
+//   const registerNewProfile = async () => {
+//     try {
+//       const newProfile = await axios.post("/profile/add",{profile_pic, linkedin,
+//       portfolio, github, quote, user_id })
+//       console.log(newProfile.data)
+//     }
+//     catch (err) {
+//       console.log(props.user.userId)
+//       console.log(err)
+//     }
+//   }
+// }
+
 
 
 
@@ -125,9 +148,9 @@ const Auth = (props) => {
             <button className="registerbtn" onClick={() => registerNewUserAndProfile()}>
               Create Account
             </button>
-            <button className="registerbtn" onClick={() => registerNewProfile()}>
+            {/* <button className="registerbtn" onClick={() => registerNewProfile()}>
               Profile Initial 
-            </button>
+            </button> */}
             <button className="newAcctBtn" onClick={() => setNewUser(!newUser)}>
               Already a User?
             </button>
