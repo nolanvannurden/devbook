@@ -37,8 +37,25 @@ const Auth = (props) => {
       console.log(err)
     }
   }
+  let profile_pic = "profilepic"
+  let linkedin = "yourlinkedin"
+  let portfolio = "yourportfolio"
+  let github = "yourgithub"
+  let quote = "yourbestquote"
+  let user_id = "16"
 
-  
+  const registerNewProfile = async () => {
+    try {
+      const newProfile = await axios.post("/profile/add",{profile_pic, linkedin,
+      portfolio, github, quote, user_id})
+      console.log(newProfile.data)
+    }
+    catch (err) {
+      console.log(err)
+    }
+  }
+
+
 
 
 
@@ -98,6 +115,9 @@ const Auth = (props) => {
             </div>
             <button className="registerbtn" onClick={() => registerNewUser()}>
               Create Account
+            </button>
+            <button className="registerbtn" onClick={() => registerNewProfile()}>
+              Profile Initial 
             </button>
             <button className="newAcctBtn" onClick={() => setNewUser(!newUser)}>
               Already a User?
