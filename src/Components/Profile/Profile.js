@@ -106,6 +106,7 @@ const Profile = (props) => {
                   }}
                 />
                 <img
+                className='profile-img'
                 alt="Add Profile Photo Here"
                   ref={uploadedImage}
                   style={{

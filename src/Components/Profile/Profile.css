@@ -111,26 +111,12 @@
     margin: 0 auto;
 
 }
- 
-
-button {
-    border-radius: 10%;
-    width: 150px;
-    background-color: #FF5A36;
-}
 
 .form-button {
     width: 50vw;
     margin: 0 auto;
 }
 
-input {
-    background-color: #2c6a83;
-    width: 200px;
-    height: 50px;
-    font-size: 15px;
-
-}
 
 ::placeholder {
     color: black;
@@ -139,8 +125,36 @@ input {
 
 }
 
-img {
+.profile-img {
     border: none;
     border-radius: 50%;
 
+}
+
+.profile-linkedin {
+        background-color: #2c6a83;
+        width: 200px;
+        height: 50px;
+        font-size: 15px;
+}
+
+.profile-portfolio {
+    background-color: #2c6a83;
+    width: 200px;
+    height: 50px;
+    font-size: 15px;
+}
+
+.profile-github{
+    background-color: #2c6a83;
+    width: 200px;
+    height: 50px;
+    font-size: 15px;
+}
+
+.quote-input {
+    background-color: #2c6a83;
+    width: 200px;
+    height: 50px;
+    font-size: 15px;
 }
