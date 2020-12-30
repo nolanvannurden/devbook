@@ -12,6 +12,7 @@
     align-items: center;
     justify-content: center;
     padding: 10px;
+
     
 }
 
@@ -22,27 +23,43 @@
     align-items: center;
     justify-content: center;
     padding: 10px;
+
     
 }
 
 .profile-form{
     margin: 0 auto;
+    background-color: #19323c;
+    justify-content: center;
+    border-radius: 15px;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #FF5A36;;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
 }
 .profile-pic-input{
-    width: 200px;
+    width: 250px;
     border: 1px solid black;
     border-radius: 50%;
-    height: 200px;
+    height: 250px;
+    background-color: #FF5A36;
+}
+
+.profile-form-photo {
+    padding: 15px;
 }
 
 .profile{
     margin: 0 auto;
     display: flex;
-    width: 80vw;
+    width: 50vw;
     flex-direction: row;
     padding: 25px;
-
+    background-color: #19323c;
     justify-content: center;
+    border-radius: 15px;
+    border: 1px solid #FF5A36;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.1);
 
 
 }
@@ -55,10 +72,10 @@
 
 .profile-pic {
     height: 200px;
-    border: 1px solid black;
+    
     border-radius: 50%;
     background-color: #FF5A36;
-    border: 3px solid #19323c;
+
 }
 
 .right-profile{
@@ -70,36 +87,44 @@
 }
 
 .linkedin{
-    border: 1px solid black;
+    font-family: "Abril Fatface", cursive;
     width: 300px;
     background-color:#2c6a84;
     font-size: 15px;
-    border: 3px solid #19323c;
+    border: 1px solid #FF5A36;
+    color: white;
+    border-radius: 5px;
 }
 
 .portfolio{
     width: 300px;
-    border: 1px solid black;
+    font-family: "Abril Fatface", cursive;
     background-color: #2c6a83;
     font-size: 15px;
-    border: 3px solid #19323c;
+    border: 1px solid #FF5A36;;
+    color: white;
+    border-radius: 5px;
 }
 
 .github{
     width: 300px;
-    border: 1px solid black;
+    font-family: "Abril Fatface", cursive;
     background-color: #2c6a83;
     font-size: 15px;
-    border: 3px solid #19323c;
+    border: 1px solid #FF5A36;;
+    color: white;
+    border-radius: 5px;
 }
 
 .quote{
     width: 300px;
     height: 200px;
-    border: 1px solid black;
+    font-family: "Abril Fatface", cursive;
     background-color: #2c6a83;
     font-size: 15px;
-    border: 3px solid #19323c;
+    border: 1px solid#FF5A36;;
+    color: white;
+    border-radius: 5px;
 }
 
 
@@ -112,49 +137,115 @@
 
 }
 
-.form-button {
-    width: 50vw;
-    margin: 0 auto;
-}
-
-
 ::placeholder {
-    color: black;
+    color:#19323c;
     font-size: 15px;
     text-align: center;
 
 }
 
+.profile-linkedin::placeholder {
+    color: white;
+    font-family: "Abril Fatface", cursive;
+}
+
+.profile-portfolio::placeholder {
+    color: white;
+    font-family: "Abril Fatface", cursive;
+}
+
+.profile-github::placeholder {
+    color: white;
+    font-family: "Abril Fatface", cursive;
+}
+
+.profile-quote::placeholder {
+    color: white;
+    font-family: "Abril Fatface", cursive;
+}
+
 .profile-img {
     border: none;
     border-radius: 50%;
+    color: white;
 
 }
 
 .profile-linkedin {
         background-color: #2c6a83;
-        width: 200px;
-        height: 50px;
+        width: 250px;
+        height: 30px;
         font-size: 15px;
+        color: white;
+        border-radius: 5px;
+        border: 1px solid #FF5A36;
 }
 
 .profile-portfolio {
     background-color: #2c6a83;
-    width: 200px;
-    height: 50px;
+    width: 250px;
+    height: 30px;
     font-size: 15px;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #FF5A36;
 }
 
 .profile-github{
     background-color: #2c6a83;
-    width: 200px;
-    height: 50px;
+    width: 250px;
+    height: 30px;
     font-size: 15px;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #FF5A36;
 }
 
-.quote-input {
+.profile-quote {
     background-color: #2c6a83;
-    width: 200px;
-    height: 50px;
+    width: 250px;
+    height: 70px;
     font-size: 15px;
+    color: white;
+    border-radius: 5px;
+    border: 1px solid #FF5A36;
+}
+
+.edit-button{
+    background-color: #FF5A36;
+    color: white;
+    width: 120px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+.save-button{
+    background-color: #FF5A36;
+    color: white;
+    width: 120px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+.cancel-button {
+    background-color: #FF5A36;
+    color: white;
+    width: 120px;
+    height: 25px;
+    border-radius: 5px;
+}
+
+.profile-img {
+    border-radius: 50%;
+    border: 1px solid #19323c;
+}
+
+.profile-name {
+    color: white;
+    font-size: 30px;
+    padding-bottom: 15px;;
+}
+
+.buttons {
+    padding: 10px;
 }
