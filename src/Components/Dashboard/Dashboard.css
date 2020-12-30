@@ -24,8 +24,8 @@ Ff5a36
 }
 
 .container-container {
-  max-width: 960px;
-  margin: 0 auto;
+  max-width: 1300px;
+  margin:auto;
 }
 
 .box{
@@ -44,8 +44,11 @@ Ff5a36
 }
 
 .box > img {
-  max-width: 150px;
-  max-height: 150px;
+  display:inline-block;
+  padding: 0;
+  line-height: 100px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
 }
 
