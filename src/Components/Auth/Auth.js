@@ -49,7 +49,6 @@ const Auth = (props) => {
       .post("/auth/register",{first_name, last_name, email, password, cohort})
       .then(newUser =>{
         props.loginUser(newUser.data);
-        props.history.push("/dashboard");
         console.log(newUser.data);
         console.log("Merry Christmas");
         registerNewProfile();
