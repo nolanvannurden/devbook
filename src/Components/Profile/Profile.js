@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import axios from "axios";
 import "./Profile.css";
 import Header from "../Header/Header";
+import {useHistory} from 'react-router-dom'
 
 const Profile = (props) => {
   // const [input, setInput] = useState({profile_pic: '', linkedin: '', portfolio: '', github: '', quote: ''})
@@ -36,7 +37,7 @@ const Profile = (props) => {
     quote
   ) => {
     try {
-      const res = await axios.put("/profile/user", {
+      const res = await axios.put("/profile/edit", {
         profile_pic,
         linkedin,
         portfolio,
@@ -48,6 +49,10 @@ const Profile = (props) => {
       console.log(error);
     }
   };
+
+  // const handleCancel = () => {
+  //   let history = useHistory()
+  // }
 
   // const handleChange = e => {
   //   const {name, value} = e.target;
@@ -69,6 +74,7 @@ const Profile = (props) => {
     }
   };
 
+  let history = useHistory()
   return (
     <div>
       <Header />
@@ -132,6 +138,7 @@ const Profile = (props) => {
                   type="text"
                 />
               </div>
+              <br></br>
               <div className="portfolio-input">
                 <input
                   className="profile-portfolio"
@@ -142,6 +149,7 @@ const Profile = (props) => {
                   type="text"
                 />
               </div>
+              <br></br>
               <div className="github-input">
                 <input
                   className="profile-github"
@@ -152,6 +160,7 @@ const Profile = (props) => {
                   type="text"
                 />
               </div>
+              <br></br>
               <div className="quote-input">
                 <input
                   className="profile-quote"
@@ -173,19 +182,19 @@ const Profile = (props) => {
 
             <div className="right-profile">
               <div className="linkedin">
-                <h3>{profile.linkedin}</h3>
+                <h3 className='profile-info'>{profile.linkedin}</h3>
               </div>
               <br></br>
               <div className="portfolio">
-                <h3>{profile.portfolio}</h3>
+                <h3 className='profile-info'>{profile.portfolio}</h3>
               </div>
               <br></br>
               <div className="github">
-                <h3>{profile.github}</h3>
+                <h3 className='profile-info'>{profile.github}</h3>
               </div>
               <br></br>
               <div className="quote">
-                <h3>{profile.quote}</h3>
+                <h3 className='profile-info'>{profile.quote}</h3>
               </div>
             </div>
           </div>
@@ -209,6 +218,14 @@ const Profile = (props) => {
                     }}
                   >
                     Save
+                  </button>
+                </div>
+                <div>
+                  <button
+                  className='cancel-button'
+                  onClick={() => history.goBack()}
+                  >
+                    Cancel
                   </button>
                 </div>
               </div>
