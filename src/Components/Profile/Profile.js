@@ -106,13 +106,15 @@ const Profile = (props) => {
                   }}
                 />
                 <img
+                className='profile-img'
+                alt="Add Profile Photo Here"
                   ref={uploadedImage}
                   style={{
                     width: "100%",
                     height: "100%",
 
                   }}
-                />
+                /> 
               </div>
           
               </div>
