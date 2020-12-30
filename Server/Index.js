@@ -36,8 +36,8 @@ massive({
 //ENDPOINTS 
 app.post('/auth/register', authctrl.register)
 app.post('/auth/login', authctrl.login)
+app.post('/auth/logout', authctrl.logout);
 app.get('/auth/user', authctrl.getUser)
-
 //dashboard endpoints 
 app.get('/api/users', userctrl.getAllUsers)
 app.get('/api/profiles', proctrl.getAllProfiles)
