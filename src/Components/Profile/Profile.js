@@ -116,9 +116,9 @@ const Profile = (props) => {
                   }}
                 /> 
               </div>
-          
+                  
               </div>
-
+              <h2 className='profile-name'>{props.user.first_name}</h2>
             <div className="profile-form-info">
               <div className="name"></div>
 
@@ -168,6 +168,7 @@ const Profile = (props) => {
           <div className="profile">
             <div className="left-profile">
               <div className="profile-pic">{profile.profile_pic}</div>
+              <h2 className='profile-name'>{props.user.first_name}</h2>
             </div>
 
             <div className="right-profile">
