@@ -106,6 +106,7 @@ const Profile = (props) => {
                   type="file"
                   accept="image/*"
                   multiple="false"
+                  capture style="display:none"
                   ref={imageUploader}
                   style={{
                     display: "none"
@@ -118,6 +119,7 @@ const Profile = (props) => {
                   style={{
                     width: "100%",
                     height: "100%",
+                    cursor: "pointer"
 
                   }}
                 /> 
