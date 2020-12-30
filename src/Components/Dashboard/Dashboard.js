@@ -14,7 +14,8 @@ const Dashboard = (props) => {
   const [nameFilter, setNameFilter] = useState('');
 
   useEffect(() => {
-    
+    props.getUser();
+
     async function getAllUsers() {
       const users = await Axios.get('/api/users');
       setUsers(users.data);
