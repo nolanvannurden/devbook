@@ -37,22 +37,31 @@ const Auth = (props) => {
       console.log(err)
     }
   }
+
+
   let profile_pic = "profilepic"
   let linkedin = "yourlinkedin"
   let portfolio = "yourportfolio"
   let github = "yourgithub"
   let quote = "yourbestquote"
-  let user_id = "16"
+  let user_id = props.user.userId
+  
 
   const registerNewProfile = async () => {
     try {
       const newProfile = await axios.post("/profile/add",{profile_pic, linkedin,
-      portfolio, github, quote, user_id})
+      portfolio, github, quote, user_id })
       console.log(newProfile.data)
     }
     catch (err) {
+      console.log(props.user.userId)
       console.log(err)
     }
+  }
+  
+  const registerNewUserAndProfile = () => {
+      registerNewUser();
+      // registerNewProfile();
   }
 
 
@@ -113,7 +122,7 @@ const Auth = (props) => {
               
               </div>
             </div>
-            <button className="registerbtn" onClick={() => registerNewUser()}>
+            <button className="registerbtn" onClick={() => registerNewUserAndProfile()}>
               Create Account
             </button>
             <button className="registerbtn" onClick={() => registerNewProfile()}>
