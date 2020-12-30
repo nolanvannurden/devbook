@@ -12,7 +12,7 @@ module.exports = {
 			const hash = bcrypt.hashSync(password, salt);
 			const [newUser] = await db.add_user([first_name, last_name, email, hash, cohort]);
 			req.session.user = {
-				userId: newUser.user_id,
+				user_id: newUser.user_id,
 				first_name: newUser.first_name,
 				last_name: newUser.last_name,
 				email: newUser.email,
