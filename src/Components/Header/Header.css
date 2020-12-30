@@ -1,11 +1,12 @@
 .nav-header {
+	/* grid-area: auto; */
   padding: 0 0px;
 	height: 5%;
 	color: white;
   background-color: #19323c;
 	text-align: center;
 	font-family: "Abril Fatface", cursive;
-	font-size: 150%;
+	font-size: 175%;
   display: flex;
   justify-content: space-between;
 	align-items: center;
@@ -16,21 +17,13 @@
 	width: 5%;
 }
 
-.dashboard-css{
- color: aliceblue;
-}
-
-.profile-css {
-	color: white ;
-}
-
-.nav-header a {
-  color: inherit;
+.home-css {
+	transform: translate(5px);
 }
 
 .nav-links{
   display: flex;
   width: 33%;
   justify-content: space-around;
-  align-items: center;
+	align-items: center;
 }
