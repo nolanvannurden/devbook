@@ -5,7 +5,6 @@ import axios from "axios";
 import { connect } from "react-redux";
 import { logoutUser } from "../../redux/userReducer";
 
-
 // Have user first_name displayed on header when logged in
 // have header links underline when on selected link
 // have each link be a different color depending on coded color
@@ -13,6 +12,7 @@ import { logoutUser } from "../../redux/userReducer";
 const Header = (props) => {
   return (
     <nav className="nav-header">
+      <meta name="viewport" content="max-width: 576, initial-scale=1"></meta>
       <img
         className="devbook-img"
         src="https://cdn.discordapp.com/attachments/789197223237910528/789287051991973938/devbook-logo.png"
@@ -33,6 +33,7 @@ const Header = (props) => {
             Profile
           </Link>
         </div>
+
         <div>
           <button
             className="logout"
