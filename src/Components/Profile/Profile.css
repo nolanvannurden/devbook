@@ -99,6 +99,7 @@
 .linkedin{
     font-family: "Abril Fatface", cursive;
     width: 350px;
+    height: 35px;
     margin: 0 auto;
     background-color:#2c6a84;
     font-size: 15px;
@@ -109,6 +110,7 @@
 
 .portfolio{
     width: 350px;
+    height: 35px;
     font-family: "Abril Fatface", cursive;
     background-color: #2c6a83;
     font-size: 15px;
@@ -120,6 +122,7 @@
 
 .github{
     width: 350px;
+    height: 35px;
     font-family: "Abril Fatface", cursive;
     background-color: #2c6a83;
     font-size: 15px;
@@ -226,6 +229,19 @@
     width: 120px;
     height: 25px;
     border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-button:hover{
+    transform: scale(1.5)
+}
+
+.save-button:hover {
+    transform: scale(1.1)
+}
+
+.cancel-button:hover {
+    transform: scale(1.1)
 }
 
 .save-button{
@@ -234,6 +250,8 @@
     width: 120px;
     height: 25px;
     border-radius: 5px;
+    cursor: progress;
+ 
 }
 
 .cancel-button {
@@ -242,6 +260,7 @@
     width: 120px;
     height: 25px;
     border-radius: 5px;
+    cursor: not-allowed;
 }
 
 
@@ -253,6 +272,7 @@
 
 .buttons {
     padding: 10px;
+    
 }
 
 @media screen and (max-width: 576px) {
