@@ -13,7 +13,6 @@ const Auth = (props) => {
   const [cohort, setCohort] = useState("");
   const [newUser, setNewUser] = useState(false);
 
-
   const loggingInUser = async () => {
     try {
       const user = await axios.post("/auth/login", { email, password });
@@ -26,181 +25,176 @@ const Auth = (props) => {
     }
   };
 
-  const registerNewUserAndProfile = () => {
-    registerNewUser();
-    // registerNewProfile();
-}
-
-  // const registerNewUser = async () => {
-  //   try {
-  //     const newUser = await axios.post("/auth/register",{first_name, last_name, email, password, cohort})
-  //     props.loginUser(newUser.data);
-  //     props.history.push("/dashboard");
-  //     console.log(newUser.data);
-  //     console.log("Merry Christmas");
-  //   } catch (err){
-  //     console.log(err)
-  //   }
-  // }
-
   const registerNewUser = () => {
-
     axios
-      .post("/auth/register",{first_name, last_name, email, password, cohort})
-      .then(newUser =>{
+      .post("/auth/register", {
+        first_name,
+        last_name,
+        email,
+        password,
+        cohort,
+      })
+      .then((newUser) => {
         props.loginUser(newUser.data);
         console.log(newUser.data);
         console.log("Merry Christmas");
         registerNewProfile();
-    })
-      .catch(err => console.log(err))
-  }
+      })
+      .catch((err) => console.log(err));
+  };
 
-  let profile_pic = "profilepic"
-  let linkedin = "yourlinkedin"
-  let portfolio = "yourportfolio"
-  let github = "yourgithub"
-  let quote = "yourbestquote"
-  let user_id = props.user.userId
-  
+  let profile_pic = "profilepic";
+  let linkedin = "yourlinkedin";
+  let portfolio = "yourportfolio";
+  let github = "yourgithub";
+  let quote = "yourbestquote";
+  let user_id = props.user.userId;
 
   const registerNewProfile = async () => {
-    axios.post("/profile/add",{profile_pic, linkedin, portfolio, github, quote, user_id })
-    .then(newProfile => {
-      console.log(newProfile)
-      props.history.push("/profile");
-    })
-    .catch(err => console.log(err))
-  }
-//   const registerNewProfile = async () => {
-//     try {
-//       const newProfile = await axios.post("/profile/add",{profile_pic, linkedin,
-//       portfolio, github, quote, user_id })
-//       console.log(newProfile.data)
-//     }
-//     catch (err) {
-//       console.log(props.user.userId)
-//       console.log(err)
-//     }
-//   }
-// }
+    axios
+      .post("/profile/add", {
+        profile_pic,
+        linkedin,
+        portfolio,
+        github,
+        quote,
+        user_id,
+      })
+      .then((newProfile) => {
+        console.log(newProfile);
+        handleSend();
+        props.history.push("/profile");
+      })
+      .catch((err) => console.log(err));
+  };
 
-
-
-
-
-
-
+  const handleSend = async () => {
+    try {
+      const sentEmail = await axios.post("/email", { email });
+      alert("Email Sent");
+      console.log(sentEmail);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   let leftFrag = "<";
   let rightFrag = "/>";
 
   return (
     <div className="entireAuthPage">
-      {newUser ? (<div>
-        <div className="registerBox">
-          <h1>Register</h1>
-          <div></div>
-          <div className="registerItems">
-            <div className="boxContainer">
-              <div className="titleContainer">
-                <h3>First Name</h3>
-                <h3>Last Name</h3>
+      {newUser ? (
+        <div>
+          <div className="registerBox">
+            <h1>Register</h1>
+            <div></div>
+            <div className="registerItems">
+              <div className="boxContainer">
+                <div className="titleContainer">
+                  <h3>First Name</h3>
+                  <h3>Last Name</h3>
+                  <h3>Email</h3>
+                  <h3>Password</h3>
+                  <h3>Cohort</h3>
+                </div>
+                <div className="inputContainer">
+                  <input
+                    name="firstName"
+                    placeholder="First Name"
+                    value={first_name}
+                    onChange={(event) => setfirstName(event.target.value)}
+                  />
+                  <input
+                    name="lastName"
+                    placeholder="Last Name"
+                    value={last_name}
+                    onChange={(event) => setlastName(event.target.value)}
+                  />
+                  <input
+                    name="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(event) => setEmail(event.target.value)}
+                  />
+                  <input
+                    name="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(event) => setPassword(event.target.value)}
+                  />
+                  <input
+                    name="cohort"
+                    placeholder="Cohort"
+                    value={cohort}
+                    onChange={(event) => setCohort(event.target.value)}
+                  />
+                </div>
+              </div>
+              <button className="registerbtn" onClick={() => registerNewUser()}>
+                Create Account
+              </button>
+              <button className="registerbtn" onClick={() => handleSend()}>
+                Send Email
+              </button>
+              <button
+                className="newAcctBtn"
+                onClick={() => setNewUser(!newUser)}
+              >
+                Already a User?
+              </button>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div className="loginPortion">
+          <div className="aboutBox">
+            <div className="aboutBoxItems">
+              <h1>
+                Welcome to {leftFrag}Devbook{rightFrag}
+              </h1>
+              <p>
+                {leftFrag}Devbook{rightFrag} was created as a social media
+                yearbook platform for Devmountain alumni
+              </p>
+              <p>-WR6</p>
+            </div>
+          </div>
+          <div className="loginBox">
+            <h1>Sign In</h1>
+            <div></div>
+            <div className="loginItems">
+              <div className="email">
                 <h3>Email</h3>
-                <h3>Password</h3>
-                <h3>Cohort</h3>
-              </div>
-              <div className="inputContainer">
-              <input
-                name="firstName"
-                placeholder="First Name"
-                value={first_name}
-                onChange={(event) => setfirstName(event.target.value)}
-              />
-              <input
-                name="lastName"
-                placeholder="Last Name"
-                value={last_name}
-                onChange={(event) => setlastName(event.target.value)}
-              />
-              <input
-                name="email"
-                placeholder="Email"
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-              />
-              <input
-                name="password"
-                placeholder="Password"
-                value={password}
-                onChange={(event) => setPassword(event.target.value)}
-              />
-              <input
-                name="cohort"
-                placeholder="Cohort"
-                value={cohort}
-                onChange={(event) => setCohort(event.target.value)}
-              />
-              
-              </div>
-            </div>
-            <button className="registerbtn" onClick={() => registerNewUserAndProfile()}>
-              Create Account
-            </button>
-            {/* <button className="registerbtn" onClick={() => registerNewProfile()}>
-              Profile Initial 
-            </button> */}
-            <button className="newAcctBtn" onClick={() => setNewUser(!newUser)}>
-              Already a User?
-            </button>
-          </div>
-        </div>
-      </div>) : (
-      <div className="loginPortion">
-        <div className="aboutBox">
-          <div className="aboutBoxItems">
-            <h1>
-              Welcome to {leftFrag}Devbook{rightFrag}
-            </h1>
-            <p>
-              {leftFrag}Devbook{rightFrag} was created as a social media yearbook
-              platform for Devmountain alumni
-            </p>
-            <p>-WR6</p>
-          </div>
-        </div>
-        <div className="loginBox">
-          <h1>Sign In</h1>
-          <div></div>
-          <div className="loginItems">
-            <div className="email">
-              <h3>Email</h3>
 
-              <input
-                name="email"
-                placeholder="Email"
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-              />
+                <input
+                  name="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                />
+              </div>
+              <div className="passWord">
+                <h3>Password</h3>
+                <input
+                  name="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(event) => setPassword(event.target.value)}
+                />
+              </div>
+              <button className="btn" onClick={() => loggingInUser()}>
+                Login
+              </button>
+              <button
+                className="newAcctBtn"
+                onClick={() => setNewUser(!newUser)}
+              >
+                Need an Account?
+              </button>
             </div>
-            <div className="passWord">
-              <h3>Password</h3>
-              <input
-                name="password"
-                placeholder="Password"
-                value={password}
-                onChange={(event) => setPassword(event.target.value)}
-              />
-            </div>
-            <button className="btn" onClick={() => loggingInUser()}>
-              Login
-            </button>
-            <button className="newAcctBtn" onClick={() => setNewUser(!newUser)}>
-              Need an Account?
-            </button>
           </div>
         </div>
-      </div>)}
+      )}
       <video
         autoPlay
         loop
@@ -220,6 +214,9 @@ const Auth = (props) => {
       </video>
       <footer className="footer" style={{ color: "#ebebeb" }}>
         We do not own the rights to this video
+      </footer>
+      <footer className="footermobile" style={{ color: "#34a8eb" }}>
+        We do not own the rights to this image or Lil Jon
       </footer>
     </div>
   );
