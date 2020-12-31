@@ -6,6 +6,7 @@ const session = require('express-session');
 const authctrl = require('./Controllers/authController')
 const proctrl = require('./Controllers/profileController')
 const userctrl = require('./Controllers/userController')
+const nodemail = require('./Controllers/emailController')
 const {SESSION_SECRET, SERVER_PORT, CONNECTION_STRING} = process.env
 const {checkUser} = require('./Controllers/middleware')
 
@@ -46,6 +47,9 @@ app.get('/api/profiles', proctrl.getAllProfiles)
 app.post('/profile/add', checkUser, proctrl.addProfile )
 app.get('/profile/user', checkUser, proctrl.getProfile)
 app.put("/profile/edit", checkUser, proctrl.editProfile)
+
+//Email
+app.post("/email", nodemail.email)
 
 
 app.listen(SERVER_PORT, () => console.log(`Listening on ${SERVER_PORT}`));

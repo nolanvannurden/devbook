@@ -19,16 +19,28 @@
   align-items: center;
   margin-top: 20%;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 576px) {
   .entireAuthPage {
-    flex-direction: column;
+  margin: 0 auto;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/src/jakob-owens-_SXxTHUkCwE-unsplash.jpg");
+  background-image: url("/src/liljonnormal.jpg");
+  background-image: url("/src/liljoncolorful.jpg");
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
   }
 }
 .loginPortion {
   display: flex;
   flex-direction: row;
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 576px) {
   .loginPortion {
     flex-direction: column;
   }
@@ -47,6 +59,12 @@
   font-weight: bold;
   border-radius: 2%;
 }
+
+/* @media screen and (max-width: 576px) {
+  .aboutBox {
+    height: 200px;
+  }
+} */
 .aboutBoxItems {
   height: 275px;
   width: 325px;
@@ -65,6 +83,11 @@
   font-family: "Abril Fatface", cursive;
   border-radius: 2%;
 }
+/* @media screen and (max-width: 576px) {
+  .loginBox {
+    height: 200px;
+  }
+} */
 .loginBox h1 {
   width: 350px;
   display: flex;
@@ -146,11 +169,39 @@
   margin-right: -50%;
   transform: translate(-50%, -50%);
   font-family: "Abril Fatface", cursive;
-  /* width: 50%; */
+}
+
+@media screen and (max-width: 576px) {
+  .footer {
+    display:  none;
+  }
+}
+
+.footermobile {
+  margin: auto;
+  position: fixed;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  left: 50%;
+  top: 98%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  font-family: "Abril Fatface", cursive;
+  color:#003249;
+}
+
+@media screen and (min-width: 576px) {
+  .entireAuthPage .footermobile {
+    display:  none;
+    color:#003249
+  }
 }
 
 /* Register css */
 .registerBox {
+  margin: 0;
+  padding: 0;
   margin-top: -25px;
   height: 400px;
   width: 350px;
@@ -161,6 +212,13 @@
   font-family: "Abril Fatface", cursive;
   border-radius: 2%;
 }
+@media screen and (max-width: 576px) {
+  .registerBox {
+    margin-top: 0;
+  }
+}
+
+
 .registerBox h1 {
   color: #003249;
 }
@@ -195,7 +253,6 @@
   align-items: flex-end;
 }
 .inputContainer input {
-  /* background-color: #ebebeb; */
   height: 20px;
   width: 200px;
 }
@@ -209,7 +266,6 @@
   margin: auto;
   margin-top: 30px;
   justify-content: center;
-  font-family: "Alegreya", serif;
   border-radius: 2%;
   font-family: "Abril Fatface", cursive;
 }
@@ -223,4 +279,9 @@
   color: #ebebeb;
   background-color: #ff5a36;
   font-family: "Abril Fatface", cursive;
+}
+@media screen and (max-width: 576px) {
+  video {
+    display:  none;
+  }
 }
