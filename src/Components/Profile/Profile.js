@@ -112,7 +112,7 @@ const Profile = (props) => {
                     display: "none"
                   }}
                 />
-                <img
+                {/* <img
                 className='profile-img'
            
                   ref={uploadedImage}
@@ -122,7 +122,8 @@ const Profile = (props) => {
                     cursor: "pointer"
 
                   }}
-                /> 
+                />  */}
+                <img className= 'profile_img' src={profile.profile_pic} alt="profile"/>
               </div>
                   
               </div>
