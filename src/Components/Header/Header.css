@@ -1,5 +1,4 @@
 .nav-header {
-	/* grid-area: auto; */
   padding: 0 0px;
 	height: 5%;
 	color: white;
@@ -10,7 +9,11 @@
   display: flex;
   justify-content: space-between;
 	align-items: center;
-	/* max-width: 375px; */
+	/* display: grid;
+	grid-row: auto;
+	grid-template-columns: max-content 375px;
+	grid-area: auto;
+	grid-auto-flow: row; */
 }
 
 .devbook-img {
@@ -18,9 +21,6 @@
 	width: 5%;
 }
 
-.home-css {
-	transform: translate(5px);
-}
 
 .nav-links{
   display: flex;

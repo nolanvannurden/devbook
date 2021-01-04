@@ -5,9 +5,6 @@ import axios from "axios";
 import { connect } from "react-redux";
 import { logoutUser } from "../../redux/userReducer";
 
-// Have user first_name displayed on header when logged in
-// have header links underline when on selected link
-// have each link be a different color depending on coded color
 
 const Header = (props) => {
   return (
