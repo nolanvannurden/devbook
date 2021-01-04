@@ -149,8 +149,8 @@ const Profile = (props) => {
                   }}
                 />
                 <img
-                className='profile-img-form'
-                  src="https://cdn.discordapp.com/attachments/789197223237910528/789287051991973938/devbook-logo.png"
+                className='profile-img'
+           
                   ref={uploadedImage}
                   style={{
                     width: "100%",

@@ -42,13 +42,12 @@
     border: 1px solid black;
     border-radius: 50%;
     height: 280px;
-
+    background-color: #FF5A36;
 }
 
 .profile-form-photo {
     padding: 15px;
     border-radius: 50%;
-
 }
 
 .profile{
@@ -78,22 +77,15 @@
     width: 350px;
     margin: 0 auto;
     border-radius: 50%;
-    
+    background-color: #FF5A36;
 
 }
 
 .profile-img {
+    border: none;
     height: 300px;
     border-radius: 50%;
-    background-color:  #19323c;
-
-}
-
-.profile-img-form{
-    height: 300px;
-    border-radius: 50%;
-    background-color:  #EBEBEB;
-    border: 1px solid black;
+    border: 1px solid #19323c;
 }
 
 .right-profile{
