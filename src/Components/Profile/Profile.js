@@ -178,20 +178,20 @@ const Profile = (props) => {
               </div>
               <br></br>
               <div className="portfolio-input">
-                <input
+              <input
                   className="profile-portfolio"
                   placeholder="Portfolio Link"
                   value={portfolio}
                   onChange={(e) => setPortfolio(e.target.value)}
                   name="portfolio"
                   type="text"
-                />
+                /> 
               </div>
               <br></br>
               <div className="github-input">
                 <input
                   className="profile-github"
-                  placeholder="Github Link"
+                  placeholder= "Github Link"
                   value={github}
                   onChange={(e) => setGithub(e.target.value)}
                   name="github"
@@ -246,6 +246,11 @@ const Profile = (props) => {
                   <button
                     className='save-button'
                     onClick={() => {
+                      setProfilePic(profile.profile_pic)
+                      setLinkedin(profile.linkedin)
+                      setPortfolio(profile.portfolio)
+                      setGithub(profile.github)
+                      setQuote(profile.quote)
                       editProfile(
                         profile_pic,
                         linkedin,
@@ -274,6 +279,11 @@ const Profile = (props) => {
               <button
               className='edit-button'
                 onClick={() => {
+                  setProfilePic(profile.profile_pic)
+                  setLinkedin(profile.linkedin)
+                  setPortfolio(profile.portfolio)
+                  setGithub(profile.github)
+                  setQuote(profile.quote)
                   setEdit(!edit);
                 }}
               >
