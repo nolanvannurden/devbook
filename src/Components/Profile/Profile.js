@@ -61,16 +61,52 @@ const Profile = (props) => {
 
   const uploadedImage = React.useRef(null);
   const imageUploader = React.useRef(null);
+
   const handleImageUpload = (e) => {
+    console.log("handleImageUpload (e):", e);
     const [file] = e.target.files;
+    console.log("[file]", file);
+
     if (file) {
+      
+      axios.get("/api/signedrequest", {
+        params: {"file-name": file.name, "file-type": file.type}
+      })
+      .then( (signedRes) => {
+
+        const { signedRequest, url } = signedRes.data;
+        
+        axios.put(
+          signedRequest, file, 
+          {headers: {'Content-Type': file.type, 'x-amz-acl': 'public-read'}})
+          .then( (uploadRes) => {
+            console.log("uploadRes?:", uploadRes);
+            setProfilePic(url);
+          })
+
+      })
+      .catch( (err) => {console.log("Get signed request err:", err)})
+      
+
+      // Get signed request from S3
+
+      // Use the signed request
+
       const reader = new FileReader();
+
       const { current } = uploadedImage;
+
       current.file = file;
+      console.log("current before (e):", current);
+
       reader.onload = (e) => {
+        console.log("reader.onload e:", e)
         current.src = e.target.result;
+        console.log("current in (e):", current);
       };
+
       reader.readAsDataURL(file);
+      
     }
   };
 
@@ -98,14 +134,14 @@ const Profile = (props) => {
                 <input
                   className="profile-pic"
                   onChange={handleImageUpload}
-                  onChange={(e) => setProfilePic([e.target.files])}
-                  value={profile_pic}
+                  //onChange={(e) => setProfilePic([e.target.files])}
+                  //value={imageUploader.current.value}
                   ref={imageUploader}
     
                   name="profile-pic"
                   type="file"
                   accept="image/*"
-                  multiple="false"
+                  multiple={false}
                   capture style="display:none"
                   ref={imageUploader}
                   style={{

@@ -69,3 +69,18 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 # devbook
+
+
+### S3 Integration
+
+- Have or create a bucket
+- Create user that has permission to read/write the bucket
+- Write the bucket user's credentials to a secret .env file on a server
+- Write Express API endpoint which can create "signed requests" for S3
+- React can then ask Express API for permission to upload to S3. 
+- Express will ask S3, using the bucket secret, to sign a request.
+- S3 will send a signed request back to Express.
+- Express will send the signed request to React.
+- React uses the signed request to upload the file directly to S3.
+- S3 responds with the S3 file URL
+- Write S3 file URL to database in the user's profile.
