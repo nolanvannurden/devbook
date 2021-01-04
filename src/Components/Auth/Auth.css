@@ -21,19 +21,19 @@
 }
 @media screen and (max-width: 576px) {
   .entireAuthPage {
-  margin: 0 auto;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-image: url("/src/jakob-owens-_SXxTHUkCwE-unsplash.jpg");
-  background-image: url("/src/liljonnormal.jpg");
-  background-image: url("/src/liljoncolorful.jpg");
-  background-position: center; 
-  background-repeat: no-repeat; 
-  background-size: cover; 
+    margin: 0 auto;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/src/jakob-owens-_SXxTHUkCwE-unsplash.jpg");
+    background-image: url("/src/liljonnormal.jpg");
+    background-image: url("/src/liljoncolorful.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }
 .loginPortion {
@@ -59,12 +59,11 @@
   font-weight: bold;
   border-radius: 2%;
 }
-
-/* @media screen and (max-width: 576px) {
+@media screen and (max-width: 576px) {
   .aboutBox {
     height: 200px;
   }
-} */
+}
 .aboutBoxItems {
   height: 275px;
   width: 325px;
@@ -83,81 +82,6 @@
   font-family: "Abril Fatface", cursive;
   border-radius: 2%;
 }
-/* @media screen and (max-width: 576px) {
-  .loginBox {
-    height: 200px;
-  }
-} */
-.loginBox h1 {
-  width: 350px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100px;
-  margin: 0;
-  color: #ebebeb;
-  color: #34a8eb;
-  color: #003249;
-  border-radius: 2%;
-}
-
-.loginItems {
-  display: flex;
-  flex-direction: column;
-
-  margin-right: 10px;
-}
-
-.email {
-  color: #19323c;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-.email input {
-  height: 20px;
-  width: 200px;
-}
-.email h3 {
-  margin-right: 58px;
-}
-.passWord {
-  color: #19323c;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-.passWord input {
-  height: 20px;
-  width: 200px;
-}
-.passWord h3 {
-  margin-right: 25px;
-}
-.loginItems button {
-  color: #ebebeb;
-  background-color: #003249;
-  height: 25px;
-  width: 100px;
-  margin: auto;
-  margin-top: 30px;
-  justify-content: center;
-  font-family: "Alegreya", serif;
-  border-radius: 2%;
-  font-family: "Abril Fatface", cursive;
-}
-
-.loginItems .newAcctBtn {
-  margin-top: 50px;
-  font-size: 15px;
-  height: 25px;
-  width: 150px;
-  color: #ebebeb;
-  background-color: #ff5a36;
-  font-family: "Abril Fatface", cursive;
-}
 .footer {
   margin: auto;
   position: fixed;
@@ -173,7 +97,7 @@
 
 @media screen and (max-width: 576px) {
   .footer {
-    display:  none;
+    display: none;
   }
 }
 
@@ -188,14 +112,68 @@
   margin-right: -50%;
   transform: translate(-50%, -50%);
   font-family: "Abril Fatface", cursive;
-  color:#003249;
+  color: #34a8eb;
 }
 
 @media screen and (min-width: 576px) {
-  .entireAuthPage .footermobile {
-    display:  none;
-    color:#003249
+  .footermobile {
+    display: none;
   }
+}
+
+.loginBox {
+  margin: 0;
+  padding: 0;
+  height: 300px;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: #003249;
+  background-color: #827081;
+  font-family: "Abril Fatface", cursive;
+  border-radius: 2%;
+}
+@media screen and (max-width: 576px) {
+  .loginBox {
+    height: 200px;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 576px) {
+  .loginBox button {
+    color: #ebebeb;
+    background-color: #003249;
+    height: 25px;
+    width: 120px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2%;
+    font-family: "Abril Fatface", cursive;
+  }
+}
+.logintitleContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+@media screen and (max-width: 576px) {
+  .loginBox h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+}
+.registerItems .needanAccount {
+  display: flex;
+  font-size: 15px;
+  height: 25px;
+  width: 150px;
+  color: #ebebeb;
+  background-color: #ff5a36;
+  font-family: "Abril Fatface", cursive;
 }
 
 /* Register css */
@@ -218,6 +196,20 @@
   }
 }
 
+@media screen and (max-width: 576px) {
+  .registerItems .needanAccount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    height: 25px;
+    width: 150px;
+    margin-top: 10px;
+    color: #ebebeb;
+    background-color: #ff5a36;
+    font-family: "Abril Fatface", cursive;
+  }
+}
 
 .registerBox h1 {
   color: #003249;
@@ -244,7 +236,6 @@
 }
 .titleContainer h3 {
   color: #003249;
-  
 }
 .inputContainer {
   display: flex;
@@ -257,7 +248,6 @@
   width: 200px;
 }
 
-
 .registerItems button {
   color: #ebebeb;
   background-color: #003249;
@@ -268,6 +258,19 @@
   justify-content: center;
   border-radius: 2%;
   font-family: "Abril Fatface", cursive;
+}
+@media screen and (max-width: 576px) {
+  .registerItems button {
+    color: #ebebeb;
+    background-color: #003249;
+    height: 25px;
+    width: 120px;
+    margin: auto;
+    margin-top: 15px;
+    justify-content: center;
+    border-radius: 2%;
+    font-family: "Abril Fatface", cursive;
+  }
 }
 
 .registerItems .newAcctBtn {
@@ -282,6 +285,6 @@
 }
 @media screen and (max-width: 576px) {
   video {
-    display:  none;
+    display: none;
   }
 }

@@ -133,9 +133,9 @@ const Auth = (props) => {
               <button className="registerbtn" onClick={() => registerNewUser()}>
                 Create Account
               </button>
-              <button className="registerbtn" onClick={() => handleSend()}>
+              {/* <button className="registerbtn" onClick={() => handleSend()}>
                 Send Email
-              </button>
+              </button> */}
               <button
                 className="newAcctBtn"
                 onClick={() => setNewUser(!newUser)}
@@ -162,31 +162,32 @@ const Auth = (props) => {
           <div className="loginBox">
             <h1>Sign In</h1>
             <div></div>
-            <div className="loginItems">
-              <div className="email">
-                <h3>Email</h3>
-
-                <input
-                  name="email"
-                  placeholder="Email"
-                  value={email}
-                  onChange={(event) => setEmail(event.target.value)}
-                />
+            <div className="registerItems">
+              <div className="boxContainer">
+                <div className="logintitleContainer">
+                  <h3>Email</h3>
+                  <h3>Password</h3>
+                </div>
+                <div className="inputContainer">
+                  <input
+                    name="email"
+                    placeholder="Email"
+                    value={email}
+                    onChange={(event) => setEmail(event.target.value)}
+                  />
+                  <input
+                    name="password"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(event) => setPassword(event.target.value)}
+                  />
+                </div>
               </div>
-              <div className="passWord">
-                <h3>Password</h3>
-                <input
-                  name="password"
-                  placeholder="Password"
-                  value={password}
-                  onChange={(event) => setPassword(event.target.value)}
-                />
-              </div>
-              <button className="btn" onClick={() => loggingInUser()}>
+              <button className="registerbtn" onClick={() => loggingInUser()}>
                 Login
               </button>
               <button
-                className="newAcctBtn"
+                className="needanAccount"
                 onClick={() => setNewUser(!newUser)}
               >
                 Need an Account?
@@ -215,8 +216,8 @@ const Auth = (props) => {
       <footer className="footer" style={{ color: "#ebebeb" }}>
         We do not own the rights to this video
       </footer>
-      <footer className="footermobile" style={{ color: "#34a8eb" }}>
-        We do not own the rights to this image or Lil Jon
+      <footer className="footermobile">
+        We do not own the rights to this image
       </footer>
     </div>
   );
