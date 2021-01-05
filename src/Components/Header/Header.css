@@ -1,30 +1,39 @@
 .nav-header {
   padding: 0 0px;
-	height: 5%;
-	color: white;
+  height: 5%;
+  color: white;
   background-color: #19323c;
-	text-align: center;
-	font-family: "Abril Fatface", cursive;
-	font-size: 175%;
+  text-align: center;
+  font-family: "Abril Fatface", cursive;
+  font-size: 150%;
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: space-between;
-	align-items: center;
-	/* display: grid;
-	grid-row: auto;
-	grid-template-columns: max-content 375px;
-	grid-area: auto;
-	grid-auto-flow: row; */
+  align-items: center;
+}
+
+@media screen and (max-width: 560px) {
+  .nav-header {
+    flex-direction: column;
+    height: 25%;
+    font-size: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .devbook-img {
-	height: 5%;
-	width: 5%;
+  height: 5%;
+  width: 5%;
 }
 
-
-.nav-links{
+.nav-links {
   display: flex;
   width: 33%;
   justify-content: space-around;
-	align-items: center;
+  align-items: center;
 }
