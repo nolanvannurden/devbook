@@ -1,6 +1,33 @@
 body {
-  background-color:#EBEBEB ;
+  /* background-color:#EBEBEB ; */
+  /* light blue to white */
+  /* background-image: -webkit-linear-gradient(200deg,#EBEBEB,#34a8eb);
+    background-image: -o-linear-gradient(200deg,#EBEBEB,#34a8eb);
+    background-image: linear-gradient(97deg,#EBEBEB,#34a8eb); */
 
+  /* background-image: -webkit-linear-gradient(200deg,#34a8eb,#EBEBEB);
+    background-image: -o-linear-gradient(200deg,#34a8eb,#EBEBEB);
+    background-image: linear-gradient(100deg,#827081,#EBEBEB); */
+
+  background-image: linear-gradient(
+    200deg,
+    #ebebeb,
+    #827081,
+    #2c6a84,
+    #19323c,
+    #ff5a36,
+    #34a8eb,
+    #003249
+  );
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  background-repeat: repeat-y;
+}
+@media screen and (max-width: 576px) {
+  body {
+    height: 100%;
+  }
 }
 
 .App {
