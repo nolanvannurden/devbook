@@ -14,7 +14,7 @@ const Header = (props) => {
           className="devbook-img"
           src="https://cdn.discordapp.com/attachments/789197223237910528/789287051991973938/devbook-logo.png"
         />
-        <div className="nav-links">
+        <div className="nav-links a">
           <div className="home-css">
             <Link style={{ color: "#Ff5a36" }} to="/">
               Home
