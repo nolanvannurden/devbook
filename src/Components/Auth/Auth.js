@@ -178,6 +178,7 @@ const Auth = (props) => {
                   <input
                     name="password"
                     placeholder="Password"
+                    type="password"
                     value={password}
                     onChange={(event) => setPassword(event.target.value)}
                   />
