@@ -26,24 +26,24 @@ const Header = (props) => {
             </Link>
           </div>
           <div className="profile-css">
-            <Link style={{ color: "#Ff5a36" }} to="/Profile">
+            <Link style={{ color: "#Ff5a36"}} to="/Profile">
               Profile
             </Link>
           </div>
 
           <div>
-            <button
-              className="logout"
-              style={{ color: "#FF5a36" }}
-              onClick={() => {
-                props.logoutUser(); //front-end
-                axios
-                  .post("/auth/logout") //back-end
-                  .then(() => props.history.push("/"));
-              }}
-            >
-              Logout
-            </button>
+            <a href="#" class="animated-button1"                 onClick={() => {
+                  props.logoutUser(); //front-end
+                  axios
+                    .post("/auth/logout") //back-end
+                    .then(() => props.history.push("/"));
+                }}>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              LOGOUT
+            </a>
           </div>
         </div>
       </nav>
