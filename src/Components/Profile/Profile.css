@@ -1,3 +1,5 @@
+
+
 .profile-component {
     margin: 0 auto;
     display: flex;
@@ -39,10 +41,16 @@
 }
 .profile-pic-input{
     width: 300px;
-    border: 1px solid black;
     border-radius: 50%;
     height: 280px;
-    background-color: #FF5A36;
+
+}
+
+.profile-img {
+    border: none;
+    height: 300px;
+    border-radius: 50%;
+
 }
 
 .profile-form-photo {
@@ -77,16 +85,11 @@
     width: 350px;
     margin: 0 auto;
     border-radius: 50%;
-    background-color: #FF5A36;
+
 
 }
 
-.profile-img {
-    border: none;
-    height: 300px;
-    border-radius: 50%;
-    border: 1px solid #19323c;
-}
+
 
 .right-profile{
     width: 400px;
