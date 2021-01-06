@@ -256,12 +256,12 @@ a {
 }
 
 .animated-button1 {
-  background: linear-gradient(-30deg, #ff5a36 50%, #ff5a36 50%);
+  background: linear-gradient(-30deg, #19323c 50%, #19323c 50%);
   display: flex;
   -webkit-transform: translate(0%, 0%);
   transform: translate(0%, 0%);
   overflow: hidden;
-  color: #003249;
+  color: #EBEBEB;
   font-size: 75%;
   text-align: center;
   text-transform: uppercase;
