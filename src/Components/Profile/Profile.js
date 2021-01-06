@@ -151,7 +151,7 @@ const Profile = (props) => {
                 className='profile-img'
                   ref={uploadedImage}
                   src={profile_pic}
-                 
+  
                   style={{
                     width: "100%",
                     height: "100%",
