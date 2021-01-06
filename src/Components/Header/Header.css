@@ -68,8 +68,6 @@ a {
   align-items: center;
 }
 
-
-
 .animated-button1 {
   background: linear-gradient(-30deg, #19323c 50%, #19323c 50%);
   display: flex;
@@ -118,7 +116,7 @@ a {
     from(rgba(43, 8, 8, 0)),
     to(blue)
   );
-  background: linear-gradient(to left, rgba(43, 8, 8, 0), #34a8eb);
+  background: linear-gradient(to left, rgba(43, 8, 8, 0), #Ff5a36);
   -webkit-animation: 2s animateTop linear infinite;
   animation: 2s animateTop linear infinite;
 }
@@ -146,7 +144,7 @@ a {
     from(rgba(43, 8, 8, 0)),
     to(#34a8eb)
   );
-  background: linear-gradient(to top, rgba(43, 8, 8, 0), #34a8eb);
+  background: linear-gradient(to top, rgba(43, 8, 8, 0), #Ff5a36);
   -webkit-animation: 2s animateRight linear -1s infinite;
   animation: 2s animateRight linear -1s infinite;
 }
@@ -217,4 +215,3 @@ a {
     transform: translateY(100%);
   }
 }
-
