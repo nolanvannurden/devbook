@@ -43,11 +43,11 @@ const Auth = (props) => {
       .catch((err) => console.log(err));
   };
 
-  let profile_pic = "profilepic";
-  let linkedin = "yourlinkedin";
-  let portfolio = "yourportfolio";
-  let github = "yourgithub";
-  let quote = "yourbestquote";
+  let profile_pic = "https://cdn.discordapp.com/attachments/789197223237910528/789287051991973938/devbook-logo.png";
+  let linkedin = "add your linkedin";
+  let portfolio = "add your portfolio";
+  let github = "add your github";
+  let quote = "add your best quote";
   let user_id = props.user.userId;
 
   const registerNewProfile = async () => {
