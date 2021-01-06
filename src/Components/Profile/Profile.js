@@ -215,7 +215,7 @@ const Profile = (props) => {
           <div className="profile">
             <div className="left-profile">
             
-              <div className="profile-pic"><img className= 'profile-img' src={profile.profile_pic} src='https://cdn.discordapp.com/attachments/789197223237910528/789287051991973938/devbook-logo.png' alt="profile"/></div>
+              <div className="profile-pic"><img className= 'profile-img' src={profile.profile_pic} alt="profile"/></div>
               <h2 className='profile-name'>{props.user.first_name}</h2>
             </div>
 
