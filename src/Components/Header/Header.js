@@ -14,7 +14,7 @@ const Header = (props) => {
           className="devbook-img"
           src="https://cdn.discordapp.com/attachments/789197223237910528/789287051991973938/devbook-logo.png"
         />
-        <div className="nav-links">
+        <div className="nav-links a">
           <div className="home-css">
             <Link style={{ color: "#Ff5a36" }} to="/">
               Home
@@ -26,18 +26,22 @@ const Header = (props) => {
             </Link>
           </div>
           <div className="profile-css">
-            <Link style={{ color: "#Ff5a36"}} to="/Profile">
+            <Link style={{ color: "#Ff5a36" }} to="/Profile">
               Profile
             </Link>
           </div>
 
           <div>
-            <a href="#" class="animated-button1"                 onClick={() => {
-                  props.logoutUser(); //front-end
-                  axios
-                    .post("/auth/logout") //back-end
-                    .then(() => props.history.push("/"));
-                }}>
+            <a
+              href="#"
+              class="animated-button1"
+              onClick={() => {
+                props.logoutUser(); //front-end
+                axios
+                  .post("/auth/logout") //back-end
+                  .then(() => props.history.push("/"));
+              }}
+            >
               <span></span>
               <span></span>
               <span></span>
