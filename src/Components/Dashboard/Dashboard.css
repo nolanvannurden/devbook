@@ -13,6 +13,7 @@ Ff5a36
   padding:0;
   list-style: none;
   box-sizing: border-box;
+  font-family: 'Alegreya', serif;
 }
 
 .container{
@@ -64,4 +65,12 @@ Ff5a36
   justify-content: space-around;
   padding:5px 5px 10px 5px;
 
+}
+
+
+@media screen and (max-width: 576px){
+  .box{
+    width:200px;
+    height: 200px;
+  }
 }
