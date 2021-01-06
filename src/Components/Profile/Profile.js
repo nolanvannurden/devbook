@@ -6,6 +6,7 @@ import "./Profile.css";
 import Header from "../Header/Header";
 import {useHistory} from 'react-router-dom'
 
+
 const Profile = (props) => {
   // const [input, setInput] = useState({profile_pic: '', linkedin: '', portfolio: '', github: '', quote: ''})
   const [profile_pic, setProfilePic] = useState("");
@@ -134,15 +135,11 @@ const Profile = (props) => {
                 <input
                   className="profile-pic"
                   onChange={handleImageUpload}
-                  //onChange={(e) => setProfilePic([e.target.files])}
-                  //value={imageUploader.current.value}
                   ref={imageUploader}
-    
                   name="profile-pic"
                   type="file"
                   accept="image/*"
                   multiple={false}
-                  capture style="display:none"
                   ref={imageUploader}
                   style={{
                     display: "none"
@@ -150,8 +147,8 @@ const Profile = (props) => {
                 />
                 <img
                 className='profile-img'
-           
                   ref={uploadedImage}
+                  src={profile_pic}
                   style={{
                     width: "100%",
                     height: "100%",
