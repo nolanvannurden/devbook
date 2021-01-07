@@ -6,6 +6,8 @@
     width: 80vw;
     flex-direction: column;
     padding: 25px;
+    height: 100vh;
+
 }
 
 .profile-component-left {
