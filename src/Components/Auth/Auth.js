@@ -97,7 +97,6 @@ const Auth = (props) => {
                   <h3>Email</h3>
                   <h3>Password</h3>
                   <h3>Cohort</h3>
-                  <h3>Soundcloud</h3>
                 </div>
                 <div className="inputContainer">
                   <input
