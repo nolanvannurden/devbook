@@ -20,9 +20,8 @@ body {
     #003249
   );
   background-size: cover;
-  height: 100vh;
+  height: 100%;
   width: 100%;
-  background-repeat: repeat-y;
 }
 @media screen and (max-width: 576px) {
   body {
