@@ -43,7 +43,8 @@ const Auth = (props) => {
       .catch((err) => console.log(err));
   };
 
-  let profile_pic = "https://cdn.discordapp.com/attachments/789197223237910528/789287051991973938/devbook-logo.png";
+  let profile_pic =
+    "https://cdn.discordapp.com/attachments/789197223237910528/789287051991973938/devbook-logo.png";
   let linkedin = "add your linkedin";
   let portfolio = "add your portfolio";
   let github = "add your github";
@@ -96,6 +97,7 @@ const Auth = (props) => {
                   <h3>Email</h3>
                   <h3>Password</h3>
                   <h3>Cohort</h3>
+                  <h3>Soundcloud</h3>
                 </div>
                 <div className="inputContainer">
                   <input
@@ -130,18 +132,31 @@ const Auth = (props) => {
                   />
                 </div>
               </div>
-              <button className="registerbtn" onClick={() => registerNewUser()}>
+              <a
+                href="#"
+                className="animated-button"
+                onClick={() => registerNewUser()}
+              >
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
                 Create Account
-              </button>
+              </a>
               {/* <button className="registerbtn" onClick={() => handleSend()}>
                 Send Email
               </button> */}
-              <button
-                className="newAcctBtn"
+              <a
+                href="#"
+                className="animated-button2"
                 onClick={() => setNewUser(!newUser)}
               >
-                Already a User?
-              </button>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Already a user?
+              </a>
             </div>
           </div>
         </div>
@@ -184,15 +199,28 @@ const Auth = (props) => {
                   />
                 </div>
               </div>
-              <button className="registerbtn" onClick={() => loggingInUser()}>
+              <a
+                href="#"
+                className="animated-button"
+                onClick={() => loggingInUser()}
+              >
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
                 Login
-              </button>
-              <button
-                className="needanAccount"
+              </a>
+              <a
+                href="#"
+                className="animated-button2"
                 onClick={() => setNewUser(!newUser)}
               >
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
                 Need an Account?
-              </button>
+              </a>
             </div>
           </div>
         </div>
