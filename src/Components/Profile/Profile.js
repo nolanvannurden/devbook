@@ -4,8 +4,7 @@ import { connect } from "react-redux";
 import axios from "axios";
 import "./Profile.css";
 import Header from "../Header/Header";
-import {useHistory} from 'react-router-dom'
-
+import { useHistory } from "react-router-dom";
 
 const Profile = (props) => {
   // const [input, setInput] = useState({profile_pic: '', linkedin: '', portfolio: '', github: '', quote: ''})
@@ -69,25 +68,28 @@ const Profile = (props) => {
     console.log("[file]", file);
 
     if (file) {
-      
-      axios.get("/api/signedrequest", {
-        params: {"file-name": file.name, "file-type": file.type}
-      })
-      .then( (signedRes) => {
+      axios
+        .get("/api/signedrequest", {
+          params: { "file-name": file.name, "file-type": file.type },
+        })
+        .then((signedRes) => {
+          const { signedRequest, url } = signedRes.data;
 
-        const { signedRequest, url } = signedRes.data;
-        
-        axios.put(
-          signedRequest, file, 
-          {headers: {'Content-Type': file.type, 'x-amz-acl': 'public-read'}})
-          .then( (uploadRes) => {
-            console.log("uploadRes?:", uploadRes);
-            setProfilePic(url);
-          })
-
-      })
-      .catch( (err) => {console.log("Get signed request err:", err)})
-      
+          axios
+            .put(signedRequest, file, {
+              headers: {
+                "Content-Type": file.type,
+                "x-amz-acl": "public-read",
+              },
+            })
+            .then((uploadRes) => {
+              console.log("uploadRes?:", uploadRes);
+              setProfilePic(url);
+            });
+        })
+        .catch((err) => {
+          console.log("Get signed request err:", err);
+        });
 
       // Get signed request from S3
 
@@ -101,17 +103,16 @@ const Profile = (props) => {
       console.log("current before (e):", current);
 
       reader.onload = (e) => {
-        console.log("reader.onload e:", e)
+        console.log("reader.onload e:", e);
         current.src = e.target.result;
         console.log("current in (e):", current);
       };
 
       reader.readAsDataURL(file);
-      
     }
   };
 
-  let history = useHistory()
+  let history = useHistory();
   return (
     <div>
       <Header />
@@ -121,17 +122,16 @@ const Profile = (props) => {
         {edit ? (
           <div className="profile-form">
             <div className="profile-form-photo">
-              <div 
-              className="profile-pic-input"
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center"
-              }}
-              onClick={() => imageUploader.current.click()}
+              <div
+                className="profile-pic-input"
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+                onClick={() => imageUploader.current.click()}
               >
-                
                 <input
                   className="profile-pic"
                   onChange={handleImageUpload}
@@ -141,28 +141,23 @@ const Profile = (props) => {
                   accept="image/*"
                   multiple={false}
                   ref={imageUploader}
-
                   style={{
-                    display: "none"
+                    display: "none",
                   }}
-
                 />
                 <img
-                className='profile-img'
+                  className="profile-img"
                   ref={uploadedImage}
                   src={profile.profile_pic}
-  
                   style={{
                     width: "100%",
                     height: "100%",
-                    cursor: "pointer"
-
+                    cursor: "pointer",
                   }}
-                /> 
+                />
               </div>
-                  
-              </div>
-              <h2 className='profile-name'>{props.user.first_name}</h2>
+            </div>
+            <h2 className="profile-name">{props.user.first_name}</h2>
             <div className="profile-form-info">
               <div className="name"></div>
 
@@ -178,20 +173,20 @@ const Profile = (props) => {
               </div>
               <br></br>
               <div className="portfolio-input">
-              <input
+                <input
                   className="profile-portfolio"
                   placeholder="Portfolio Link"
                   value={portfolio}
                   onChange={(e) => setPortfolio(e.target.value)}
                   name="portfolio"
                   type="text"
-                /> 
+                />
               </div>
               <br></br>
               <div className="github-input">
                 <input
                   className="profile-github"
-                  placeholder= "Github Link"
+                  placeholder="Github Link"
                   value={github}
                   onChange={(e) => setGithub(e.target.value)}
                   name="github"
@@ -214,26 +209,31 @@ const Profile = (props) => {
         ) : (
           <div className="profile">
             <div className="left-profile">
-            
-              <div className="profile-pic"><img className= 'profile-img' src={profile.profile_pic} alt="profile"/></div>
-              <h2 className='profile-name'>{props.user.first_name}</h2>
+              <div className="profile-pic">
+                <img
+                  className="profile-img"
+                  src={profile.profile_pic}
+                  alt="profile"
+                />
+              </div>
+              <h2 className="profile-name">{props.user.first_name}</h2>
             </div>
 
             <div className="right-profile">
               <div className="linkedin">
-                <h3 className='profile-info'>{profile.linkedin}</h3>
+                <h3 className="profile-info">{profile.linkedin}</h3>
               </div>
               <br></br>
               <div className="portfolio">
-                <h3 className='profile-info'>{profile.portfolio}</h3>
+                <h3 className="profile-info">{profile.portfolio}</h3>
               </div>
               <br></br>
               <div className="github">
-                <h3 className='profile-info'>{profile.github}</h3>
+                <h3 className="profile-info">{profile.github}</h3>
               </div>
               <br></br>
               <div className="quote">
-                <h3 className='profile-info'>{profile.quote}</h3>
+                <h3 className="profile-info">{profile.quote}</h3>
               </div>
             </div>
           </div>
@@ -244,13 +244,13 @@ const Profile = (props) => {
               <div className="profile-buttons">
                 <div className="profile-edit-button-container">
                   <button
-                    className='save-button'
+                    className="save-button"
                     onClick={() => {
-                      setProfilePic(profile.profile_pic)
-                      setLinkedin(profile.linkedin)
-                      setPortfolio(profile.portfolio)
-                      setGithub(profile.github)
-                      setQuote(profile.quote)
+                      setProfilePic(profile.profile_pic);
+                      setLinkedin(profile.linkedin);
+                      setPortfolio(profile.portfolio);
+                      setGithub(profile.github);
+                      setQuote(profile.quote);
                       editProfile(
                         profile_pic,
                         linkedin,
@@ -266,8 +266,8 @@ const Profile = (props) => {
                 </div>
                 <div>
                   <button
-                  className='cancel-button'
-                  onClick={() => history.goBack()}
+                    className="cancel-button"
+                    onClick={() => history.goBack()}
                   >
                     Cancel
                   </button>
@@ -277,13 +277,13 @@ const Profile = (props) => {
           ) : (
             <div>
               <button
-              className='edit-button'
+                className="edit-button"
                 onClick={() => {
-                  setProfilePic(profile.profile_pic)
-                  setLinkedin(profile.linkedin)
-                  setPortfolio(profile.portfolio)
-                  setGithub(profile.github)
-                  setQuote(profile.quote)
+                  setProfilePic(profile.profile_pic);
+                  setLinkedin(profile.linkedin);
+                  setPortfolio(profile.portfolio);
+                  setGithub(profile.github);
+                  setQuote(profile.quote);
                   setEdit(!edit);
                 }}
               >
